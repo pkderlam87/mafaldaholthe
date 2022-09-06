@@ -1,0 +1,19 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.nav-link,
+.btn {
+    font-family: $font-primary;
+}
+
+p,
+a {
+    font-family: $font-secondary;
+}
+
+a {
+    color: getColor(light-blue);
+}

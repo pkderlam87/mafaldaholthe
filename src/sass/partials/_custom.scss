@@ -1,0 +1,17 @@
+/* Color variables*/
+$colors: (
+    primary-color: #E2C3BB,
+    secondary-color: #202020,
+    third-color:#FFF,
+    dark-brown: #886553,
+    light-beige: #FDF7D8,
+    light-blue:#4D7093,
+
+);
+
+@function getColor($color) {
+    @return map-get($colors, $color);
+}
+
+$font-primary: "Protipo", sans-serif;
+$font-secondary: "Minion Pro Subhead", sans-serif;

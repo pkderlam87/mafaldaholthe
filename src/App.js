@@ -14,6 +14,7 @@ import Admin from "./components/pages/Admin";
 import NavBar from "./components/layout/NavBar";
 import { AuthProvider } from "./components/context/AuthContext";
 import Footer from "./components/layout/Footer";
+import './sass/styles.scss';
 
 function App() {
   return (

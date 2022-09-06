@@ -54,7 +54,7 @@ function Home() {
                         const alt = service.images[0].alternativeText;
 
                         return (
-                            <Col sm={12} md={6} lg={4} key={id}>
+                            <Col sm={12} md={6} lg={6} key={id}>
                                 <ResultHome id={id} title={title} description={description} image={image} alt={alt} />
                             </Col>
                         );

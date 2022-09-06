@@ -1,0 +1,12 @@
+.footer {
+    background-color: getColor(dark-brown);
+    color: getColor(light-beige);
+}
+
+.footer__email {
+    color: getColor(light-beige);
+
+    &.hover {
+        color: getColor(third-color);
+    }
+}

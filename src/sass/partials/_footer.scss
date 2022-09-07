@@ -6,7 +6,7 @@
 .footer__email {
     color: getColor(light-beige);
 
-    &.hover {
+    &:hover {
         color: getColor(third-color);
     }
 }

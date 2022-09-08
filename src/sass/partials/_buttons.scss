@@ -1,0 +1,23 @@
+.btn-primary {
+    background-color: getColor(primary-color);
+    color: getColor(secondary-color);
+    box-shadow: 0 6px 12px getColor(shadow-color);
+    border: none;
+
+    &:hover {
+        border: 2px solid getColor(primary-color);
+        background-color: getColor(third-color);
+        color: getColor(secondary-color);
+    }
+
+    &:focus {
+        border: none;
+        background-color: getColor(focus-color);
+        color: getColor(secondary-color);
+        box-shadow: inset 2px 3px 10px getColor(inner-shadow);
+    }
+}
+
+button:focus:not(:focus-visible) {
+    outline: none !important;
+}

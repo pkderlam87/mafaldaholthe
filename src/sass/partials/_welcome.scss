@@ -2,4 +2,6 @@
     display: flex;
 }
 
-.welcome__title {}
+.welcome__title {
+    align-self: flex-end;
+}

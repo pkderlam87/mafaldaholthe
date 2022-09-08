@@ -6,9 +6,10 @@ $colors: (
     dark-brown: #886553,
     light-beige: #FDF7D8,
     light-blue:#4D7093,
-    shadow: #AF7E69,
+    shadow-color: #AF7E69,
     background-orange: rgba(224, 195, 166, 0.6),
-
+    focus-color: #E7DFD0,
+    inner-shadow: #E3BBB0,
 );
 
 @function getColor($color) {

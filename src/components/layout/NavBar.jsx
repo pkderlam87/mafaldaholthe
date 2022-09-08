@@ -31,7 +31,7 @@ function NavBar() {
         return <div>Has error</div>;
     }
     return (
-        <Container>
+        <Container className="navbar">
             <Row>
                 <Navbar expand="lg">
                     <Container>

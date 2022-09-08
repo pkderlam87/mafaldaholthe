@@ -1,3 +1,22 @@
+.navbar {
+    position: absolute;
+    top: 0;
+}
+
 .navbar-toggler {
     border: var(--bs-border-width) solid rgba(0, 0, 0, 0);
+
+    &:focus {
+        border: var(--bs-border-width) solid rgba(0, 0, 0, 0);
+        outline: none !important;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+.navbar-collapse {
+    position: absolute !important;
+    background-color: getColor(primary-color);
+    top: 100px;
+    left: 10px;
+    width: 150px;
 }

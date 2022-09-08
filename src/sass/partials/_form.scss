@@ -1,0 +1,14 @@
+input:focus {
+    border: 0 solid getColor(shadow-color) !important;
+    box-shadow: inset 0 -1px 0 getColor(shadow-color) !important;
+}
+
+.form-control:focus~.form-notch div {
+    border: 0 solid getColor(shadow-color) !important;
+    box-shadow: inset 0 -1px 0 getColor(shadow-color) !important;
+}
+
+.form-control:focus~.form-label {
+    border: 0 solid getColor(shadow-color) !important;
+    box-shadow: inset 0 -1px 0 getColor(shadow-color) !important;
+}

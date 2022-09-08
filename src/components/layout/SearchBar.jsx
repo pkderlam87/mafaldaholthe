@@ -5,7 +5,7 @@ import { BASE_URL } from '../../constants/api';
 import { Icon } from '@iconify/react';
 import searchIcon from '@iconify/icons-wpf/search';
 import { InputGroup, Form, Button } from 'react-bootstrap';
-import ResultHome from './ResultHome';
+//import ResultHome from './ResultHome';
 
 
 

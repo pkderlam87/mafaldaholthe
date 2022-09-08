@@ -1,0 +1,7 @@
+.suggestions {
+    cursor: pointer;
+
+    &:hover {
+        background-color: getColor(background-orange);
+    }
+}

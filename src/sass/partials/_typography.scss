@@ -16,6 +16,10 @@ a {
 
 a {
     color: getColor(light-blue);
+
+    &:hover {
+        color: getColor(dark-blue);
+    }
 }
 
 .welcome__title {

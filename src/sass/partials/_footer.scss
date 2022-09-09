@@ -1,12 +1,34 @@
 .footer {
+    flex-shrink: 0;
     background-color: getColor(dark-brown);
     color: getColor(light-beige);
+
+    .row {
+        align-items: center;
+        margin-bottom: 6%;
+
+        svg {
+            width: 2em;
+            height: 2em;
+        }
+    }
+
 }
 
-.footer__email {
-    color: getColor(light-beige);
+.footer__email--block {
+    display: flex;
 
-    &:hover {
-        color: getColor(third-color);
+    .footer__email {
+        color: getColor(light-beige);
+
+        &:hover {
+            color: getColor(third-color);
+        }
     }
+}
+
+.footer__copyright {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
 }

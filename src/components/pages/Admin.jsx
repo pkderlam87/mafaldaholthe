@@ -1,8 +1,15 @@
 import React from 'react'
+import WelcomeOtherPages from '../layout/WelcomeOtherPages';
+import Heading from '../layout/Heading';
+import SubHeadingAdmin from '../layout/SubHeadingAdmin';
 
 function Admin() {
     return (
-        <div>Admin</div>
+        <>
+            <WelcomeOtherPages />
+            <Heading content="ADMIN PAGE" />
+            <SubHeadingAdmin />
+        </>
     )
 }
 

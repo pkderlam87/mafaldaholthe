@@ -82,6 +82,7 @@ function Detail() {
                                 src={service.images[2].url}
                                 alt={service.images[2].alternativeText}
                             />
+
                         </Carousel.Item>
                     </Carousel>
                 </div>

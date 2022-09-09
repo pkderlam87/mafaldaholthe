@@ -29,9 +29,11 @@ function Footer() {
                 </Container>
                 <div>
                     <Paragraph content="Phone number: +47 9999.9999"></Paragraph>
-                    <Paragraph content="E-mail:"></Paragraph><a href="mailto:mafaldaholthe@gmail.com" className="footer__email"><Paragraph content="mafaldaholthe@gmail.com"></Paragraph></a>
+                    <div className="footer__email--block">
+                        <Paragraph content="E-mail:"></Paragraph> <a href="mailto:mafaldaholthe@gmail.com" className="footer__email"> <Paragraph content="mafaldaholthe@gmail.com"></Paragraph></a>
+                    </div>
                 </div>
-                <div>
+                <div className="footer__copyright">
                     <Paragraph content="© Mafalda Holthe Styling"></Paragraph>
                 </div>
             </div>

@@ -11,7 +11,9 @@ function ResultHome({ id, title, description, image, alt }) {
                 <Card>
                     <h3>{title}</h3>
                     <Paragraph content={description}></Paragraph>
-                    <img src={image} alt={alt} />
+                    <div className="image-background">
+                        <img src={image} alt={alt} />
+                    </div>
                     <Button> More </Button>
                 </Card>
             </Link>

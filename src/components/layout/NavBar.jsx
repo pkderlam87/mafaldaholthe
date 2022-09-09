@@ -7,7 +7,7 @@ import AuthContext from "../context/AuthContext";
 import Button from "react-bootstrap/Button";
 import logoBlack from "../../Logo-MH-Balloon-Black-Text.png";
 import { Icon } from '@iconify/react';
-
+import houseUser from '@iconify/icons-fa-solid/house-user';
 import homeHeart from '@iconify/icons-bx/home-heart';
 import balloonHeart from '@iconify/icons-bi/balloon-heart';
 import loginLine from '@iconify/icons-majesticons/login-line';
@@ -50,7 +50,8 @@ function NavBar() {
                                 <Link to="/about" className="btn btn-primary btn-navbar"><Icon icon={balloonHeart} /> About</Link>
                                 {auth ? (
                                     <>
-                                        | <Link to="/admin" className="btn btn-primary btn-navbar">Admin</Link> | <Button
+                                        <Link to="/admin" className="btn btn-primary btn-navbar"><Icon icon={houseUser} />Admin</Link>
+                                        <Button
                                             onClick={logout} className="btn-navbar"><Icon icon={logoutLine} /> Logout</Button>
                                     </>
                                 ) : (

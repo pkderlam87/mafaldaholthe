@@ -1,0 +1,17 @@
+.review {
+    background-color: getColor(background-orange);
+
+    h3 {
+        text-transform: uppercase;
+        text-align: center;
+        margin: 10% auto;
+    }
+
+    h6 {
+        font-style: italic;
+    }
+
+    .author {
+        text-decoration: underline;
+    }
+}

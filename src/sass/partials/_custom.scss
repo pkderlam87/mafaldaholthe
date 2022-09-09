@@ -6,10 +6,12 @@ $colors: (
     dark-brown: #886553,
     light-beige: #FDF7D8,
     light-blue:#4D7093,
+    dark-blue: #0E0464,
     shadow-color: #AF7E69,
-    background-orange: rgba(224, 195, 166, 0.6),
+    background-orange: rgba(224, 195, 166, 0.4),
     focus-color: #E7DFD0,
     inner-shadow: #E3BBB0,
+    card-background: rgba(232, 224, 209, 0.3),
 );
 
 @function getColor($color) {

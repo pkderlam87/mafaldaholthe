@@ -39,12 +39,7 @@ function Login() {
             const response = await axios.post(url, data);
             console.log("response", response.data);
             setAuth(response.data);
-            if (response.data.user.username === "mafaldaholthe") {
-                history("/SuperAdmin");
-            } if (response.data.user.username === "common") {
-                history("/admin");
-            }
-
+            history("/admin");
         } catch (error) {
             console.log("error", error);
             setLoginError(error.toString());

@@ -29,15 +29,13 @@ function SearchBar() {
         setText(text);
         setSuggestions([]);
     }
-    const onKeyUpHandler = (text) => {
+    const onChangeHandler = (text) => {
         setText(text);
         let matches = []
         if (text.length > 0) {
             matches = services.filter(service => {
-                if (service.title.includes(text) || service.description.includes(text)) {
-                    return service.title.includes(text)
-                } else {
-                    return <p>This service was not found.</p>
+                if (service.title.includes(text)) {
+                    return service.title
                 }
             })
         }
@@ -50,7 +48,7 @@ function SearchBar() {
         <>
             <InputGroup className="mb-3">
                 <Form.Control
-                    type="text" onChange={e => onKeyUpHandler(e.target.value.trim().toLowerCase())} value={text} placeholder="Search for 'birthday','wedding'" onBlur={() => {
+                    type="text" onChange={e => onChangeHandler(e.target.value.trim().toLowerCase())} value={text} placeholder="Search for 'birthday','wedding'" onBlur={() => {
                         setTimeout(() => {
                             setSuggestions([])
                         }, 100)

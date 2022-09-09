@@ -5,10 +5,12 @@ import Carousel from 'react-bootstrap/Carousel';
 import image1 from '../../images/about-image-christmas.jpg';
 import image2 from '../../images/about-image-halloween.jpg';
 import image3 from '../../images/about-image-table-setting.jpg';
+import WelcomeOtherPages from '../layout/WelcomeOtherPages';
 
 function About() {
     return (
         <>
+            <WelcomeOtherPages />
             <Heading content="ABOUT" />
             <Paragraph content="The MH Styling would like to offer you an unique opportunity to enjoy your dream party without worries about decoration, snacks, cake, and other candies.
 " />

@@ -9,6 +9,7 @@ import Heading from '../layout/Heading';
 import Paragraph from '../layout/Paragraph';
 import Carousel from 'react-bootstrap/Carousel';
 import ContactForm from '../layout/ContactForm';
+import WelcomeOtherPages from '../layout/WelcomeOtherPages';
 
 function Detail() {
     const [service, setService] = useState(null);
@@ -54,6 +55,7 @@ function Detail() {
 
     return (
         <>
+            <WelcomeOtherPages />
             <Container key={service.id}>
                 <div className='service-detail'>
                     <Heading content={service.title}></Heading>

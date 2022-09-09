@@ -9,13 +9,13 @@ import { useNavigate } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
 import Heading from '../layout/Heading';
 import { Container, FloatingLabel, Form } from 'react-bootstrap';
+import WelcomeOtherPages from '../layout/WelcomeOtherPages';
 
 
 const url = BASE_URL + TOKEN_PATH;
 
-
 const schema = yup.object().shape({
-    username: yup.string().required("Please enter your username"),
+    identifier: yup.string().required("Please enter your username"),
     password: yup.string().required("Please enter your password"),
 });
 
@@ -50,6 +50,7 @@ function Login() {
     }
 
     return (<>
+        <WelcomeOtherPages />
         <Container>
             <Heading>Log in</Heading>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -59,8 +60,8 @@ function Login() {
                     label="Username"
                     className="mb-3"
                 >
-                    <Form.Control type="username" name="username" placeholder="Username" {...register("username")} />
-                    {errors.username && <span>{errors.username.message}</span>}
+                    <Form.Control type="username" name="username" placeholder="Username" {...register("identifier")} />
+                    {errors.identifier && <span>{errors.identifier.message}</span>}
                 </FloatingLabel>
 
                 <FloatingLabel controlId="floatingPassword" label="Password">

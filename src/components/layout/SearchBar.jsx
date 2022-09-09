@@ -5,9 +5,6 @@ import { BASE_URL } from '../../constants/api';
 import { Icon } from '@iconify/react';
 import searchIcon from '@iconify/icons-wpf/search';
 import { InputGroup, Form, Button } from 'react-bootstrap';
-//import ResultHome from './ResultHome';
-
-
 
 const url = BASE_URL + "/services";
 
@@ -25,8 +22,8 @@ function SearchBar() {
         }
         loadServices();
     }, []);
-    const onSuggestHandler = (text) => {
-        setText(text);
+    const onSuggestHandler = (title) => {
+        setText(title);
         setSuggestions([]);
     }
     const onChangeHandler = (text) => {

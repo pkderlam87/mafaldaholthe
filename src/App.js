@@ -11,6 +11,7 @@ import About from "./components/pages/About";
 import Detail from "./components/pages/Detail";
 import Login from "./components/pages/Login";
 import Admin from "./components/pages/Admin";
+import SuperAdmin from "./components/pages/SuperAdmin";
 import NavBar from "./components/layout/NavBar";
 import { AuthProvider } from "./components/context/AuthContext";
 import Footer from "./components/layout/Footer";
@@ -28,6 +29,7 @@ function App() {
             <Route path="/about" element={<About />}></Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/admin" element={<Admin />}></Route>
+            <Route path="/SuperAdmin" element={<SuperAdmin />}></Route>
           </Routes>
         </BrowserRouter>
       </AuthProvider>

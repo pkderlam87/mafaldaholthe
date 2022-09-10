@@ -15,7 +15,7 @@ const schema = yup.object().shape({
     name: yup.string().required("Please enter your name"),
     email: yup.string().required("Please enter your email"),
     phone: yup.string(),
-    userMessage: yup.string().required("Please enter your message"),
+    message: yup.string().required("Please enter your message"),
 });
 
 function CommonContact() {
@@ -23,7 +23,7 @@ function CommonContact() {
     const [submitError, setSubmitError] = useState(null);
 
 
-    const { handleSubmit, formState: { errors } } = useForm({
+    const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
     });
 
@@ -42,7 +42,7 @@ function CommonContact() {
     }
     return (
         <>
-            <Container>
+            <Container className="home__contact-form">
                 <Heading content="CONTACT US"></Heading>
                 {submitError && <span>{submitError}</span>}
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -51,7 +51,7 @@ function CommonContact() {
                         label="Name*:"
                         className="mb-3"
                     >
-                        <Form.Control type="name" placeholder="name" />
+                        <Form.Control type="name" placeholder="name" {...register("name")} />
                         {errors.name && <span>{errors.name.message}</span>}
                     </FloatingLabel>
                     <FloatingLabel
@@ -59,7 +59,7 @@ function CommonContact() {
                         label="E-mail*:"
                         className="mb-3"
                     >
-                        <Form.Control type="email" placeholder="email" />
+                        <Form.Control type="email" placeholder="email" {...register("email")} />
                         {errors.email && <span>{errors.email.message}</span>}
                     </FloatingLabel>
                     <FloatingLabel
@@ -67,17 +67,17 @@ function CommonContact() {
                         label="Phone number:"
                         className="mb-3"
                     >
-                        <Form.Control type="phone number" placeholder="phone number" />
+                        <Form.Control type="phone number" placeholder="phone number" {...register("phone")} />
                     </FloatingLabel>
                     <FloatingLabel
                         controlId="floatingTextarea"
                         label="Message*:"
                         className="mb-3"
                     >
-                        <Form.Control as="textarea" placeholder="message" style={{ height: '200px' }} />
-                        {errors.message && <span>{errors.UserMessage.message}</span>}
+                        <Form.Control as="textarea" placeholder="message" style={{ height: '200px' }} {...register("message")} />
+                        {errors.message && <span>{errors.message.message}</span>}
                     </FloatingLabel>
-                    <Button type="submit">{submitting ? "Sending..." : "SEND"}</Button>
+                    <Button type="submit" className="btn-secondary">{submitting ? "Sending..." : "SEND"}</Button>
                 </form>
             </Container>
         </>

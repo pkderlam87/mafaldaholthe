@@ -6,23 +6,23 @@
         color: getColor(secondary-color);
     }
 
-    .image-background {
+    .card__image--background {
         background-color: getColor(background-orange);
         display: flex;
-        order: -2;
     }
 
     .card {
         justify-content: center;
         align-items: center;
-        margin: 2%;
         border: none;
         background-color: getColor(card-background);
         border-radius: 15px;
+        margin: 3% auto;
 
         h3 {
             text-transform: uppercase;
-            margin-bottom: 6%;
+            margin: $margin-title;
+            text-align: center;
         }
 
         img {
@@ -31,11 +31,6 @@
             border: 2px solid getColor(third-color);
             object-fit: contain;
             box-shadow: 0 6px 12px getColor(shadow-color);
-        }
-
-        .btn-primary {
-            width: 60%;
-            margin: 6% auto;
         }
     }
 }

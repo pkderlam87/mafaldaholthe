@@ -1,7 +1,6 @@
 .navbar {
     position: absolute;
     top: 0;
-    left: 1px;
 }
 
 .navbar-toggler {
@@ -17,7 +16,8 @@
 .navbar-collapse {
     position: absolute !important;
     background-color: getColor(primary-color);
-    top: 100px;
+    top: 90px;
     left: 10px;
     width: 150px;
+    z-index: 100;
 }

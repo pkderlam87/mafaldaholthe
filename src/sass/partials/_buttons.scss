@@ -4,6 +4,7 @@
     box-shadow: 0 6px 12px getColor(shadow-color);
     border: none;
 
+
     &:hover {
         border: 2px solid getColor(primary-color);
         background-color: getColor(third-color);
@@ -20,4 +21,12 @@
 
 button:focus:not(:focus-visible) {
     outline: none !important;
+}
+
+.btn-secondary {
+    @extend .btn-primary;
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin: 3% auto 10% auto;
 }

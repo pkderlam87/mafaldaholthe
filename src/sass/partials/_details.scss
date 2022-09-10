@@ -1,0 +1,10 @@
+.detail__service {
+    background-color: getColor(card-background);
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        margin: $margin-title;
+        text-transform: uppercase;
+    }
+}

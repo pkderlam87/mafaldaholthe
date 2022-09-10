@@ -1,0 +1,13 @@
+.about__text {
+    background-color: getColor(card-background);
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        margin: $margin-title;
+    }
+
+    p {
+        margin-bottom: 15%;
+    }
+}

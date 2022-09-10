@@ -56,11 +56,11 @@ function Detail() {
     return (
         <>
             <WelcomeOtherPages />
-            <Container key={service.id}>
-                <div className='service-detail'>
+            <Container key={service.id} className="detail__service">
+                <div>
                     <Heading content={service.title}></Heading>
                     <Paragraph content={service.description}></Paragraph>
-                    <Button>CONTACT US</Button>
+                    <Button className="btn-secondary">CONTACT US</Button>
                     <Carousel fade>
                         <Carousel.Item>
                             <img

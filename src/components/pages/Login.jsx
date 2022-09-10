@@ -50,8 +50,8 @@ function Login() {
 
     return (<>
         <WelcomeOtherPages />
-        <Container>
-            <Heading>Log in</Heading>
+        <Container className="login">
+            <Heading content="Log in"></Heading>
             <form onSubmit={handleSubmit(onSubmit)}>
                 {loginError && <span>{loginError}</span>}
                 <FloatingLabel
@@ -67,7 +67,7 @@ function Login() {
                     <Form.Control type="password" name="password" placeholder="Password" {...register("password")} />
                     {errors.password && <span>{errors.password.message}</span>}
                 </FloatingLabel>
-                <button className='btn btn-primary'>{submitting ? "Login in..." : "Login"}</button>
+                <button className='btn btn-secondary'>{submitting ? "Login in..." : "Login"}</button>
             </form>
         </Container>
     </>

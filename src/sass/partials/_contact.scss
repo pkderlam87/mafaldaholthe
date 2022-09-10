@@ -1,0 +1,14 @@
+.home__contact-form {
+    background-color: getColor(card-background);
+
+    h1 {
+        margin: $margin-title;
+    }
+
+    button {
+        display: flex;
+        justify-content: center;
+        width: 70%;
+        margin: 3% auto 10% auto;
+    }
+}

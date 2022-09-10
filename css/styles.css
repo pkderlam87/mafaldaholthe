@@ -8,12 +8,12 @@
 .welcome__title {
   -ms-flex-item-align: end;
       align-self: flex-end;
-  margin: 5% 3%;
+  margin: 80% 3% 5% 3%;
 }
 
 .welcome-other-pages {
   background-color: #E2C3BB;
-  height: 300px;
+  height: 150px;
 }
 
 .main-logo,
@@ -35,7 +35,6 @@
 .navbar {
   position: absolute;
   top: 0;
-  left: 1px;
 }
 
 .navbar-toggler {
@@ -120,6 +119,10 @@ a {
   color: #4D7093;
 }
 
+a:hover {
+  color: #0E0464;
+}
+
 .welcome__title {
   font-family: "Jeanne Moderno OT", serif;
 }
@@ -160,7 +163,7 @@ body {
 }
 
 .suggestions:hover {
-  background-color: rgba(224, 195, 166, 0.6);
+  background-color: rgba(224, 195, 166, 0.4);
 }
 
 .btn-primary {
@@ -187,6 +190,17 @@ body {
 
 button:focus:not(:focus-visible) {
   outline: none !important;
+}
+
+.btn-secondary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 70%;
+  margin: 3% auto 10% auto;
 }
 
 input:focus {
@@ -217,7 +231,7 @@ input:focus {
 }
 
 .link-page-specific-product .image-background {
-  background-color: rgba(224, 195, 166, 0.6);
+  background-color: rgba(224, 195, 166, 0.4);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -257,5 +271,85 @@ input:focus {
 .link-page-specific-product .card .btn-primary {
   width: 60%;
   margin: 6% auto;
+}
+
+.review {
+  background-color: rgba(224, 195, 166, 0.4);
+}
+
+.review h3 {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 10% auto;
+}
+
+.review h6 {
+  font-style: italic;
+}
+
+.review .author {
+  text-decoration: underline;
+}
+
+.home__contact-form {
+  background-color: rgba(232, 224, 209, 0.3);
+}
+
+.home__contact-form h1 {
+  margin: 10% auto 6% auto;
+}
+
+.home__contact-form button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 70%;
+  margin: 3% auto 10% auto;
+}
+
+.detail__service {
+  background-color: rgba(232, 224, 209, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.detail__service h1 {
+  margin: 10% auto 6% auto;
+  text-transform: uppercase;
+}
+
+.about__text {
+  background-color: rgba(232, 224, 209, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.about__text h1 {
+  margin: 10% auto 6% auto;
+}
+
+.about__text p {
+  margin-bottom: 15%;
+}
+
+.services__carousel {
+  background-color: rgba(224, 195, 166, 0.4);
+}
+
+.services__carousel .slide {
+  margin: 13% auto 15% auto;
 }
 /*# sourceMappingURL=styles.css.map */

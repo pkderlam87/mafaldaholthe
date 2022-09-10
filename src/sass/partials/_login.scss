@@ -1,0 +1,9 @@
+.login {
+    background-color: getColor(card-background);
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        margin: $margin-title;
+    }
+}

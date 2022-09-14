@@ -21,7 +21,6 @@ function Admin({ children }) {
                 {auth.user.role.type === "authenticated" ? (
                     <>
                         <AdminMenu />
-                        {children ? children : <p></p>}
                     </>
                 ) : (
                     <>

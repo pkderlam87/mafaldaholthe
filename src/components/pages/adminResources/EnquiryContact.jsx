@@ -1,16 +1,72 @@
 import React from 'react';
+import { useState, useEffect } from "react";
 import WelcomeOtherPages from '../../layout/WelcomeOtherPages';
-import { Container } from "react-bootstrap";
-import Heading from '../../layout/Heading';
+import { Container, Table } from "react-bootstrap";
+import useAxios from "../../hooks/useAxios";
 import AdminMenu from '../../layout/adminLayout/AdminMenu';
 
 function EnquiryContact() {
+    const [enquiries, setEnquiries] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    const http = useAxios();
+
+    useEffect(function () {
+
+        async function showContact() {
+
+            try {
+                const response = await http.get("/enquiry-forms");
+                console.log("response", response.data);
+                setEnquiries(response.data);
+
+            } catch (error) {
+                console.log("error", error);
+                setError(error.toString());
+            } finally {
+                setLoading(false);
+            }
+        }
+        showContact();
+    }, []);
+    if (loading) return <div>Loading posts...</div>;
+
+    if (error) return <div>{ }</div>;
     return (
         <>
             <WelcomeOtherPages />
             <Container>
                 <AdminMenu />
-                <Heading content="ENQUIRY" />
+                <Container>
+                    <ul className="contacts">
+                        <Table striped bordered hover>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Date</th>
+                                    <th>Email</th>
+                                    <th>Message</th>
+                                </tr>
+                            </thead>
+                            {enquiries.map((enquiry) => {
+                                return (
+                                    <tbody key={enquiry.id}>
+                                        <tr>
+                                            <td>{enquiry.id}</td>
+                                            <td>{enquiry.name}</td>
+                                            <td>{enquiry.created_at}</td>
+                                            <td>{enquiry.email}</td>
+                                            <td>{enquiry.message}</td>
+                                        </tr>
+                                    </tbody>
+                                );
+                            })}
+                        </Table>
+                    </ul>
+                </Container>
+
             </Container>
         </>
     )

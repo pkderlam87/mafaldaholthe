@@ -1,20 +1,16 @@
 import React from 'react';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import WelcomeOtherPages from '../../layout/WelcomeOtherPages';
-import { Link } from "react-router-dom";
-import { Container } from "react-bootstrap";
-import Heading from '../../layout/Heading';
-//import { BASE_URL } from '../../../constants/api';
+import { Container, Table } from "react-bootstrap";
 import useAxios from "../../hooks/useAxios";
 import AdminMenu from '../../layout/adminLayout/AdminMenu';
-//import { useContext } from "react";
-//import AuthContext from '../context/AuthContext';
-//import axios from 'axios';
+import AuthContext from "../../context/AuthContext";
+
 
 
 function AdminCommonContact() {
-
-    const [posts, setPosts] = useState([]);
+    const [auth] = useContext(AuthContext);
+    const [contacts, setContacts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -27,7 +23,7 @@ function AdminCommonContact() {
             try {
                 const response = await http.get("/common-contact-forms");
                 console.log("response", response.data);
-                setPosts(response.data);
+                setContacts(response.data);
 
             } catch (error) {
                 console.log("error", error);
@@ -46,16 +42,39 @@ function AdminCommonContact() {
         <>
             <WelcomeOtherPages />
             <Container>
-                <AdminMenu />
-                <Heading content="CONTACT" />
-                <ul className="posts">
-                    {posts.map((media) => {
-                        return (
-                            <li key={media.id}>
-                                <Link to={`/dashboard/posts/edit/${media.id}`}>{media.title.rendered}</Link>
-                            </li>
-                        );
-                    })}
+                {auth.user.role.type === "authenticated" ? (
+                    <>
+                        <AdminMenu />
+                    </>
+                ) : (
+                    <>
+                    </>
+                )}
+                <ul className="contacts">
+                    <Table striped bordered hover>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Date</th>
+                                <th>Email</th>
+                                <th>Message</th>
+                            </tr>
+                        </thead>
+                        {contacts.map((contact) => {
+                            return (
+                                <tbody key={contact.id}>
+                                    <tr>
+                                        <td>{contact.id}</td>
+                                        <td>{contact.name}</td>
+                                        <td>{contact.created_at}</td>
+                                        <td>{contact.email}</td>
+                                        <td>{contact.message}</td>
+                                    </tr>
+                                </tbody>
+                            );
+                        })}
+                    </Table>
                 </ul>
             </Container>
         </>

@@ -20,4 +20,21 @@
     left: 10px;
     width: 150px;
     z-index: 100;
+
+    @media (min-width:768px) {
+        background: none;
+    }
+}
+
+.navbar-brand {
+    @media (min-width:768px) {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.navbar-nav {
+    @media (min-width:768px) {
+        margin-top: 20%;
+    }
 }

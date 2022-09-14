@@ -41,7 +41,7 @@ function Welcome() {
         <>
             <div className="welcome" style={{
                 backgroundImage: "url(" + welcome.hero_banner.url + ")", backgroundPosition: 'center',
-                backgroundSize: 'cover', backgroundRepeat: 'no-repeat', height: '300px'
+                backgroundSize: 'cover', backgroundRepeat: 'no-repeat'
             }}>
                 <h1 className="welcome__title">{welcome.hero_banner_alt_text}</h1>
             </div>

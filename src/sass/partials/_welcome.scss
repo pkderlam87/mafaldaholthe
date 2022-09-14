@@ -1,10 +1,17 @@
 .welcome {
     display: flex;
+    height: 300px;
+
+    @media (min-width:768px) {
+        height: 480px;
+    }
 }
 
 .welcome__title {
     align-self: flex-end;
     margin: 80% 3% 5% 3%;
+
+    @media (min-width:768px) {}
 }
 
 .welcome-other-pages {

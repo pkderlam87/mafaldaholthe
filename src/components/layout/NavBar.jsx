@@ -44,7 +44,7 @@ function NavBar() {
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
                                 <Link to="/" className="btn btn-primary btn-navbar"><Icon icon={homeHeart} /> Home</Link>
-                                <NavDropdown title="Parties" id="basic-nav-dropdown">
+                                <NavDropdown className="btn btn-primary btn-navbar" title="Parties" id="basic-nav-dropdown">
                                     <NavDropdown.Item><Link to="/detail" className="btn btn-primary btn-navbar">{data.title}</Link></NavDropdown.Item>
                                 </NavDropdown>
                                 <Link to="/about" className="btn btn-primary btn-navbar"><Icon icon={balloonHeart} /> About</Link>

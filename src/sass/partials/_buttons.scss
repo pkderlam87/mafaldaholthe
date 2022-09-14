@@ -30,3 +30,14 @@ button:focus:not(:focus-visible) {
     width: 70%;
     margin: 3% auto 10% auto;
 }
+
+.btn-navbar {
+    @media (min-width:768px) {
+        background-color: getColor(card-background);
+        box-shadow: none;
+        margin: 0 6% 0 3%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

@@ -59,5 +59,3 @@ function SearchBar() {
 }
 
 export default SearchBar;
-
-/**onClick={(suggestion) => ResultHome(suggestion.id, suggestion.title, suggestion.description, suggestion.images[0].url, suggestion.images[0].alt)}> */

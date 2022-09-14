@@ -11,10 +11,10 @@ import { BASE_URL } from '../../constants/api';
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import axios from "axios";
 
-const url = BASE_URL + "/specific-contact-forms";
+const url = BASE_URL + "/enquiry-forms";
 
 const schema = yup.object().shape({
     name: yup.string().required("Please enter your name"),
@@ -28,7 +28,7 @@ const schema = yup.object().shape({
     message: yup.string().required("Please enter your message")
 });
 
-function ContactForm() {
+function EnquiryForm() {
 
     const [submitting, setSubmitting] = useState(false);
     const [submitError, setSubmitError] = useState(null);
@@ -114,4 +114,4 @@ function ContactForm() {
     );
 }
 
-export default ContactForm;
+export default EnquiryForm;

@@ -4,4 +4,12 @@
     &:hover {
         background-color: getColor(background-orange);
     }
+
+    @media (min-width:768px) {
+        background-color: getColor(third-color);
+
+        &:hover {
+            background-color: getColor(background-orange);
+        }
+    }
 }

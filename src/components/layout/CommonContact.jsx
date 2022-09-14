@@ -5,7 +5,7 @@ import { BASE_URL } from '../../constants/api';
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 
@@ -33,6 +33,7 @@ function CommonContact() {
         try {
             const response = await axios.post(url, data);
             console.log("response", response.data);
+
         } catch (error) {
             console.log("error", error);
             setSubmitError(error.toString());

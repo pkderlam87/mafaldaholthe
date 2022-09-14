@@ -8,7 +8,7 @@ import { BASE_URL } from '../../constants/api'
 import Heading from '../layout/Heading';
 import Paragraph from '../layout/Paragraph';
 import Carousel from 'react-bootstrap/Carousel';
-import ContactForm from '../layout/ContactForm';
+import EnquiryForm from '../layout/EnquiryForm';
 import WelcomeOtherPages from '../layout/WelcomeOtherPages';
 
 function Detail() {
@@ -86,7 +86,7 @@ function Detail() {
                         </Carousel.Item>
                     </Carousel>
                 </div>
-                <ContactForm />
+                <EnquiryForm />
             </Container>
 
         </>

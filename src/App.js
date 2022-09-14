@@ -11,6 +11,9 @@ import About from "./components/pages/About";
 import Detail from "./components/pages/Detail";
 import Login from "./components/pages/Login";
 import Admin from "./components/pages/Admin";
+import AddService from "./components/pages/adminResources/AddService";
+import CommonContact from "./components/pages/adminResources/CommonContact";
+import EnquiryContact from "./components/pages/adminResources/EnquiryContact"
 import NavBar from "./components/layout/NavBar";
 import { AuthProvider } from "./components/context/AuthContext";
 import Footer from "./components/layout/Footer";
@@ -28,6 +31,9 @@ function App() {
             <Route path="/about" element={<About />}></Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/admin" element={<Admin />}></Route>
+            <Route path="/addService" element={<AddService />} exact></Route>
+            <Route path="/adminCommonContact" element={<CommonContact />} exact></Route>
+            <Route path="/EnquiryContact" element={<EnquiryContact />} exact></Route>
           </Routes>
         </BrowserRouter>
       </AuthProvider>

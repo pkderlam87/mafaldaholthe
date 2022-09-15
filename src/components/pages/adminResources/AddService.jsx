@@ -6,14 +6,15 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import useAxios from "../../hooks/useAxios";
 import WelcomeOtherPages from '../../layout/WelcomeOtherPages';
-import { Container } from "react-bootstrap";
+import { Container, FloatingLabel, Form } from "react-bootstrap";
 import Heading from '../../layout/Heading';
 import FormError from "../../common/FormError";
 import AdminMenu from '../../layout/adminLayout/AdminMenu';
 
 const schema = yup.object().shape({
-    name: yup.string().required("The service's name is required"),
+    title: yup.string().required("The service's title is required"),
     description: yup.string().required("The service's description is required"),
+    files: yup.mixed()
 });
 
 function AddService() {
@@ -26,18 +27,23 @@ function AddService() {
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
     });
-    async function onSubmit(data) {
+    async function onSubmit(inputData) {
         setSubmitting(true);
         setServerError(null);
 
-        data.status = "publish";
+        inputData.status = "publish";
+        console.log(inputData.title, inputData.description, inputData.files, inputData.status);
 
-        console.log(data);
-
+        const formData = new FormData();
+        for (const image of inputData.files) {
+            formData.append('files.images', image);
+        }
+        const { image, ...data } = inputData;
+        formData.append("data", JSON.stringify(data));
         try {
-            const response = await http.post("/services", data);
+            const response = await http.post("/services", formData);
             console.log("response", response.data);
-            history.push("/admin");
+            history("/admin");
         } catch (error) {
             console.log("error", error);
             setServerError(error.toString());
@@ -53,21 +59,31 @@ function AddService() {
                 <Heading content="ADD SERVICE" />
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {serverError && <FormError>{serverError}</FormError>}
-                    <fieldset disabled={submitting}>
-                        <div>
-                            <input name="name" placeholder="Name of service:" {...register("name")} />
-                            {errors.title && <FormError>{errors.title.message}</FormError>}
-                        </div>
-
-                        <div>
-                            <textarea name="description" placeholder="Description" {...register("description")} />
-                        </div>
-                        <button>{submitting ? "Submitting..." : "Submit"}</button>
-                    </fieldset>
+                    <FloatingLabel
+                        controlId="floatingInput"
+                        label="Title of service*:"
+                        className="mb-3"
+                    >
+                        <Form.Control type="title" placeholder="title" {...register("title")} />
+                        {errors.title && <FormError>{errors.title.message}</FormError>}
+                    </FloatingLabel>
+                    <FloatingLabel
+                        controlId="floatingTextarea"
+                        label="Description*:"
+                        className="mb-3"
+                    >
+                        <Form.Control as="textarea" type="description" placeholder="description" style={{ height: '200px' }} {...register("description")} />
+                        {errors.description && <FormError>{errors.description.message}</FormError>}
+                    </FloatingLabel>
+                    <Form.Group controlId="formFile" className="mb-3">
+                        <Form.Label>Choose three photos to this new service*</Form.Label>
+                        <Form.Control type="file" multiple {...register("files")} />
+                    </Form.Group>
+                    <button className="btn btn-secondary">{submitting ? "Submitting..." : "Submit"}</button>
                 </form>
             </Container>
         </>
     )
 }
 
-export default AddService
+export default AddService;

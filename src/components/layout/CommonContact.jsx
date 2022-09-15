@@ -7,6 +7,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import axios from "axios";
+import FormError from "../common/FormError";
 
 
 const url = BASE_URL + "/common-contact-forms";
@@ -45,7 +46,7 @@ function CommonContact() {
         <>
             <Container className="home__contact-form">
                 <Heading content="CONTACT US"></Heading>
-                {submitError && <span>{submitError}</span>}
+                {submitError && <FormError>{submitError}</FormError>}
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <FloatingLabel
                         controlId="floatingInput"
@@ -53,7 +54,7 @@ function CommonContact() {
                         className="mb-3"
                     >
                         <Form.Control type="name" placeholder="name" {...register("name")} />
-                        {errors.name && <span>{errors.name.message}</span>}
+                        {errors.name && <FormError>{errors.name.message}</FormError>}
                     </FloatingLabel>
                     <FloatingLabel
                         controlId="floatingInput"
@@ -61,7 +62,7 @@ function CommonContact() {
                         className="mb-3"
                     >
                         <Form.Control type="email" placeholder="email" {...register("email")} />
-                        {errors.email && <span>{errors.email.message}</span>}
+                        {errors.email && <FormError>{errors.email.message}</FormError>}
                     </FloatingLabel>
                     <FloatingLabel
                         controlId="floatingInput"
@@ -76,7 +77,7 @@ function CommonContact() {
                         className="mb-3"
                     >
                         <Form.Control as="textarea" placeholder="message" style={{ height: '200px' }} {...register("message")} />
-                        {errors.message && <span>{errors.message.message}</span>}
+                        {errors.message && <FormError>{errors.message.message}</FormError>}
                     </FloatingLabel>
                     <Button type="submit" className="btn-secondary">{submitting ? "Sending..." : "SEND"}</Button>
                 </form>

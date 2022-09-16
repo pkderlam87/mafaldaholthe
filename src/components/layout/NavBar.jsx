@@ -45,7 +45,12 @@ function NavBar() {
                             <Nav className="me-auto">
                                 <Link to="/" className="btn btn-primary btn-navbar"><Icon icon={homeHeart} /> Home</Link>
                                 <NavDropdown className="btn btn-primary btn-navbar" title="Parties" id="basic-nav-dropdown">
-                                    <NavDropdown.Item><Link to="/detail" className="btn btn-primary btn-navbar">{data.title}</Link></NavDropdown.Item>
+                                    {data.map((service) => {
+                                        const { id, title } = service;
+                                        return (
+                                            <Link key={id} to={`detail/${id}`} className="btn btn-primary btn-navbar">{title}</Link>
+                                        )
+                                    })}
                                 </NavDropdown>
                                 <Link to="/about" className="btn btn-primary btn-navbar"><Icon icon={balloonHeart} /> About</Link>
                                 {auth ? (

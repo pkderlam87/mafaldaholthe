@@ -1,3 +1,21 @@
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input {
+        padding: 1%;
+        border-radius: 5px;
+
+        &:focus {
+            outline: none;
+            padding: 2%;
+            border-radius: 5px;
+        }
+    }
+
+}
+
 .suggestions {
     cursor: pointer;
 

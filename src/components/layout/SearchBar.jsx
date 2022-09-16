@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-//import useApi from '../hooks/useAPI';
 import { BASE_URL } from '../../constants/api';
 import { Icon } from '@iconify/react';
 import searchIcon from '@iconify/icons-wpf/search';
-import { InputGroup, Form, Button } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 const url = BASE_URL + "/services";
 
 function SearchBar() {
     const [services, setServices] = useState([]);
-    const [text, setText] = useState('');
+    const [text, setText] = useState("");
     const [suggestions, setSuggestions] = useState([]);
 
     useEffect(() => {
@@ -22,18 +21,18 @@ function SearchBar() {
         }
         loadServices();
     }, []);
-    const onSuggestHandler = (title) => {
-        setText(title);
+
+    const onSuggestHandler = (text) => {
+        setText(text);
+        console.log(text);
         setSuggestions([]);
     }
     const onChangeHandler = (text) => {
         setText(text);
         let matches = []
         if (text.length > 0) {
-            matches = services.filter(service => {
-                if (service.title.includes(text)) {
-                    return service.title
-                }
+            matches = services.filter((service) => {
+                return service.title.includes(text)
             })
         }
         console.log('matches', matches);
@@ -43,17 +42,23 @@ function SearchBar() {
 
     return (
         <>
-            <InputGroup className="mb-3">
-                <Form.Control
-                    type="text" onChange={e => onChangeHandler(e.target.value.trim().toLowerCase())} value={text} placeholder="Search for 'birthday','wedding'" onBlur={() => {
-                        setTimeout(() => {
-                            setSuggestions([])
-                        }, 100)
-                    }}
-                /><Button><Icon icon={searchIcon} /></Button>
-            </InputGroup>
-            {suggestions && suggestions.map((suggestion, i) =>
-                <div key={i} onClick={() => onSuggestHandler(suggestion.title)} className="suggestions">{suggestion.title}</div>)}
+            <fieldset className="mb-3">
+                <div className="search">
+                    <input
+                        type="text" onChange={e => onChangeHandler(e.target.value.trim().toLowerCase())} value={text} placeholder="Search for 'birthday','wedding'" />
+                    <button className="btn btn-primary">
+                        <Icon icon={searchIcon} />
+                    </button>
+                </div>
+                {suggestions && suggestions.map((suggestion, i) => {
+                    return (
+                        <div key={i} className="suggestions" onClick={() => onSuggestHandler(suggestion.title)}>
+                            <Link to={`detail/${suggestion.id}`}> {suggestion.title} </Link>
+                        </div>
+                    );
+                })}
+            </fieldset>
+
         </>
     )
 }

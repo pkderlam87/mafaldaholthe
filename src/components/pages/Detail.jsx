@@ -10,9 +10,11 @@ import Paragraph from '../layout/Paragraph';
 import Carousel from 'react-bootstrap/Carousel';
 import EnquiryForm from '../layout/EnquiryForm';
 import WelcomeOtherPages from '../layout/WelcomeOtherPages';
+import loading from '../../images/loading.gif';
 
 function Detail() {
     const [service, setService] = useState(null);
+    const [images, setImages] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -29,6 +31,7 @@ function Detail() {
                 const response = await axios.get(url);
                 if (response.status === 200) {
                     setService(response.data);
+                    setImages(response.data.images);
                 } else {
                     if (!id) {
                         history(-1);
@@ -46,7 +49,7 @@ function Detail() {
     );
 
     if (loading) {
-        return <div className='loading'><div></div><div></div><div></div><div></div></div>;
+        return <img src={loading} alt="Loading" />;
     }
 
     if (error) {
@@ -62,28 +65,21 @@ function Detail() {
                     <Paragraph content={service.description}></Paragraph>
                     <Button className="btn-secondary">CONTACT US</Button>
                     <Carousel fade>
-                        <Carousel.Item>
-                            <img
-                                className="d-block w-100"
-                                src={service.images[0].url}
-                                alt={service.images[0].alternativeText}
-                            />
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img
-                                className="d-block w-100"
-                                src={service.images[1].url}
-                                alt={service.images[1].alternativeText}
-                            />
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img
-                                className="d-block w-100"
-                                src={service.images[2].url}
-                                alt={service.images[2].alternativeText}
-                            />
+                        {
+                            images.map((image, i) => {
+                                const imageUrl = image.url;
+                                const alt = image.alternativeText;
+                                return (
+                                    <Carousel.Item key={i}>
+                                        <img
+                                            className="d-block w-100"
+                                            src={imageUrl}
+                                            alt={alt}
+                                        />
+                                    </Carousel.Item>
+                                )
 
-                        </Carousel.Item>
+                            })}
                     </Carousel>
                 </div>
                 <EnquiryForm />

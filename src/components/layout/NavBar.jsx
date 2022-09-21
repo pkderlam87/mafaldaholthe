@@ -43,24 +43,24 @@ function NavBar() {
                         </Col>
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
-                                <Link to="/" className="btn btn-primary btn-navbar"><Icon icon={homeHeart} /> Home</Link>
-                                <NavDropdown className="btn btn-primary btn-navbar" title="Parties" id="basic-nav-dropdown">
+                                <Link to="/" className="nav__menu--item"><Icon icon={homeHeart} /> Home</Link>
+                                <NavDropdown className="nav__menu--drop" title="Parties" id="basic-nav-dropdown">
                                     {data.map((service) => {
                                         const { id, title } = service;
                                         return (
-                                            <Link key={id} to={`detail/${id}`} className="btn btn-primary btn-navbar">{title}</Link>
+                                            <Link key={id} to={`detail/${id}`} className="nav__menu--drop-item">{title}</Link>
                                         )
                                     })}
                                 </NavDropdown>
-                                <Link to="/about" className="btn btn-primary btn-navbar"><Icon icon={balloonHeart} /> About</Link>
+                                <Link to="/about" className="nav__menu--item"><Icon icon={balloonHeart} /> About</Link>
                                 {auth ? (
                                     <>
-                                        <Link to="/admin" className="btn btn-primary btn-navbar"><Icon icon={houseUser} />Admin</Link>
-                                        <Button
-                                            onClick={logout} className="btn-navbar"><Icon icon={logoutLine} /> Logout</Button>
+                                        <Link to="/admin" className="nav__menu--item"><Icon icon={houseUser} />Admin</Link>
+                                        <div
+                                            onClick={logout} className="nav__menu--item"><Icon icon={logoutLine} /> Logout</div>
                                     </>
                                 ) : (
-                                    <Link to="/login" className="btn btn-primary btn-navbar"><Icon icon={loginLine} /> Login</Link>
+                                    <Link to="/login" className="nav__menu--item"><Icon icon={loginLine} /> Login</Link>
                                 )}
                             </Nav>
                         </Navbar.Collapse>

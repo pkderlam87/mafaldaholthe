@@ -5,7 +5,7 @@ import { Container, Table } from "react-bootstrap";
 import useAxios from "../../hooks/useAxios";
 import AdminMenu from '../../layout/adminLayout/AdminMenu';
 import AuthContext from "../../context/AuthContext";
-
+import loading from "../../../images/loading.gif";
 
 
 function AdminCommonContact() {
@@ -34,7 +34,7 @@ function AdminCommonContact() {
         }
         showContact();
     }, []);
-    if (loading) return <div>Loading posts...</div>;
+    if (loading) return <img src={loading} alt="Loading" />;
 
     if (error) return <div>{ }</div>;
 

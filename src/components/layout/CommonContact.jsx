@@ -1,5 +1,5 @@
 import React from 'react';
-import { FloatingLabel, Form, Container, Button } from 'react-bootstrap';
+import { FloatingLabel, Form, Row, Col } from 'react-bootstrap';
 import Heading from './Heading';
 import { BASE_URL } from '../../constants/api';
 import * as yup from "yup";
@@ -44,44 +44,50 @@ function CommonContact() {
     }
     return (
         <>
-            <Container className="home__contact-form">
+            <div className="home__contact-form">
                 <Heading content="CONTACT US"></Heading>
                 {submitError && <FormError>{submitError}</FormError>}
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <FloatingLabel
-                        controlId="floatingInput"
-                        label="Name*:"
-                        className="mb-3"
-                    >
-                        <Form.Control type="name" placeholder="name" {...register("name")} />
-                        {errors.name && <FormError>{errors.name.message}</FormError>}
-                    </FloatingLabel>
-                    <FloatingLabel
-                        controlId="floatingInput"
-                        label="E-mail*:"
-                        className="mb-3"
-                    >
-                        <Form.Control type="email" placeholder="email" {...register("email")} />
-                        {errors.email && <FormError>{errors.email.message}</FormError>}
-                    </FloatingLabel>
-                    <FloatingLabel
-                        controlId="floatingInput"
-                        label="Phone number:"
-                        className="mb-3"
-                    >
-                        <Form.Control type="phone number" placeholder="phone number" {...register("phone")} />
-                    </FloatingLabel>
-                    <FloatingLabel
-                        controlId="floatingTextarea"
-                        label="Message*:"
-                        className="mb-3"
-                    >
-                        <Form.Control as="textarea" placeholder="message" style={{ height: '200px' }} {...register("message")} />
-                        {errors.message && <FormError>{errors.message.message}</FormError>}
-                    </FloatingLabel>
-                    <Button type="submit" className="btn-secondary">{submitting ? "Sending..." : "SEND"}</Button>
+                    <Row>
+                        <Col sm={12} md={6} lg={6}>
+                            <FloatingLabel
+                                controlId="floatingInput"
+                                label="Name*:"
+                                className="mb-3"
+                            >
+                                <Form.Control type="name" placeholder="name" {...register("name")} />
+                                {errors.name && <FormError>{errors.name.message}</FormError>}
+                            </FloatingLabel>
+                            <FloatingLabel
+                                controlId="floatingInput"
+                                label="E-mail*:"
+                                className="mb-3"
+                            >
+                                <Form.Control type="email" placeholder="email" {...register("email")} />
+                                {errors.email && <FormError>{errors.email.message}</FormError>}
+                            </FloatingLabel>
+                            <FloatingLabel
+                                controlId="floatingInput"
+                                label="Phone number:"
+                                className="mb-3"
+                            >
+                                <Form.Control type="phone number" placeholder="phone number" {...register("phone")} />
+                            </FloatingLabel>
+                        </Col>
+                        <Col sm={12} md={6} lg={6}>
+                            <FloatingLabel
+                                controlId="floatingTextarea"
+                                label="Message*:"
+                                className="mb-3"
+                            >
+                                <Form.Control as="textarea" placeholder="message" style={{ height: '200px' }} {...register("message")} />
+                                {errors.message && <FormError>{errors.message.message}</FormError>}
+                            </FloatingLabel>
+                        </Col>
+                    </Row>
+                    <button type="submit" className="btn-secondary">{submitting ? "Sending..." : "SEND"}</button>
                 </form>
-            </Container>
+            </div>
         </>
     )
 }

@@ -9,9 +9,30 @@
 
     h6 {
         font-style: italic;
+        margin: 4%;
+
+        @media(min-width:768px) {
+            margin: 2%;
+            max-width: 880px;
+        }
+
     }
 
     .author {
         text-decoration: underline;
+    }
+
+    .review__author {
+        margin-bottom: 10%;
+    }
+
+    @media(min-width:768px) {
+        max-width: 100%;
+        margin: 0;
+
+        .review__author {
+            margin-bottom: 2%;
+            text-align: right;
+        }
     }
 }

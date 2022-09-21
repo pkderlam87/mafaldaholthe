@@ -5,7 +5,8 @@ h4,
 h5,
 h6,
 .nav-link,
-.btn {
+.btn,
+.nav__menu--item {
     font-family: $font-primary;
 }
 
@@ -24,4 +25,11 @@ a {
 
 .welcome__title {
     font-family: $font-tertiary;
+}
+
+
+body {
+    @media(min-width: 768px) {
+        font-size: 1.2rem;
+    }
 }

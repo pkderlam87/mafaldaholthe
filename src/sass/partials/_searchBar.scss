@@ -19,15 +19,24 @@
 .suggestions {
     cursor: pointer;
 
+    a {
+        text-decoration: none;
+    }
+
     &:hover {
-        background-color: getColor(background-orange);
+        background-color: getColor(primary-color);
     }
 
     @media (min-width:768px) {
         background-color: getColor(third-color);
+    }
 
-        &:hover {
-            background-color: getColor(background-orange);
-        }
+    @media (min-width:992px) {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    @media (min-width:1200px) {
+        max-width: 78%;
     }
 }

@@ -42,23 +42,20 @@ function SearchBar() {
 
     return (
         <>
-            <fieldset className="mb-3">
-                <div className="search">
-                    <input
-                        type="text" onChange={e => onChangeHandler(e.target.value.trim().toLowerCase())} value={text} placeholder="Search for 'birthday','wedding'" />
-                    <button className="btn btn-primary">
-                        <Icon icon={searchIcon} />
-                    </button>
-                </div>
-                {suggestions && suggestions.map((suggestion, i) => {
-                    return (
-                        <div key={i} className="suggestions" onClick={() => onSuggestHandler(suggestion.title)}>
-                            <Link to={`detail/${suggestion.id}`}> {suggestion.title} </Link>
-                        </div>
-                    );
-                })}
-            </fieldset>
-
+            <div className="search">
+                <input
+                    type="text" onChange={e => onChangeHandler(e.target.value.trim().toLowerCase())} value={text} placeholder="Search for 'birthday','wedding'" />
+                <button className="btn btn-primary" disabled>
+                    <Icon icon={searchIcon} />
+                </button>
+            </div>
+            {suggestions && suggestions.map((suggestion, i) => {
+                return (
+                    <div key={i} className="suggestions" onClick={() => onSuggestHandler(suggestion.title)}>
+                        <Link to={`detail/${suggestion.id}`}> {suggestion.title} </Link>
+                    </div>
+                );
+            })}
         </>
     )
 }

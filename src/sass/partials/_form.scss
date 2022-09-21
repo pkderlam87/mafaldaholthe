@@ -14,5 +14,14 @@ input:focus {
 }
 
 form {
-    margin-bottom: 20%;
+    margin: 2% auto 20% auto;
+    max-width: 90%;
+}
+
+.home__contact-form {
+    background-color: getColor(card-background);
+
+    h1 {
+        margin: $margin-title;
+    }
 }

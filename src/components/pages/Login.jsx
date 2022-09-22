@@ -40,6 +40,7 @@ function Login() {
             console.log("response", response.data);
             setAuth(response.data);
             history("/admin");
+            console.log(auth);
         } catch (error) {
             console.log("error", error);
             setLoginError(error.toString());

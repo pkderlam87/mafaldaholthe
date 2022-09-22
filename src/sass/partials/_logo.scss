@@ -1,15 +1,19 @@
 .main-logo {
     max-width: 90%;
 
-    @media (min-width:768px) {
+    @media (min-width:992px) {
         max-width: 65%;
     }
 }
 
 .secondary-logo {
-    max-width: 90%;
+    max-width: 50%;
 
     @media (min-width:768px) {
-        max-width: 50%;
+        max-width: 40%;
+    }
+
+    @media (min-width:992px) {
+        max-width: 30%;
     }
 }

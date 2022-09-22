@@ -14,16 +14,18 @@ function Footer() {
                 <Container>
                     <Row>
                         <Col>
-                            <img src={logoBeige} className="secondary-logo" alt='logo'></img>
+                            <a href="/"><img src={logoBeige} className="secondary-logo" alt='logo'></img></a>
                         </Col>
-                        <Col>
-                            <Icon icon={instagramIcon} />
-                        </Col>
-                        <Col>
-                            <Icon icon={facebookSquare} />
-                        </Col>
-                        <Col>
-                            <Icon icon={pinterestSquare} />
+                        <Col className="social-media__icons">
+                            <Col>
+                                <a href="https://www.instagram.com/mafaldaholthe_styling/" className="social-media__icon"><Icon icon={instagramIcon} /></a>
+                            </Col>
+                            <Col>
+                                <a href="https://www.facebook.com/mafaldaholthe" className="social-media__icon"><Icon icon={facebookSquare} /></a>
+                            </Col>
+                            <Col>
+                                <a href="https://br.pinterest.com/MafaldaHolthe/_created/" className="social-media__icon"><Icon icon={pinterestSquare} /></a>
+                            </Col>
                         </Col>
                     </Row>
                 </Container>

@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { Navbar, Container, Nav, NavDropdown, Row, Col } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AuthContext from "../context/AuthContext";
-import Button from "react-bootstrap/Button";
 import logoBlack from "../../Logo-MH-Balloon-Black-Text.png";
 import { Icon } from '@iconify/react';
 import houseUser from '@iconify/icons-fa-solid/house-user';
@@ -27,7 +26,7 @@ function NavBar() {
         setAuth(null);
         history("/");
     }
-    const { data, isLoading, isError } = useApi(urlServices); if (isLoading) { return <div>Loading</div>; } if (isError) {
+    const { data, isLoading, isError } = useApi(urlServices); if (isLoading) { return <div className="loading"></div>; } if (isError) {
         return <div>Has error</div>;
     }
     return (
@@ -64,10 +63,10 @@ function NavBar() {
                                 )}
                             </Nav>
                         </Navbar.Collapse>
-                        <Col>
-                            <SearchBar />
-                        </Col>
                     </Container>
+                    <Col>
+                        <SearchBar />
+                    </Col>
                 </Navbar>
             </Row>
         </Container>

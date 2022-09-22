@@ -13,6 +13,13 @@
         }
     }
 
+    .social-media__icons {
+        display: flex;
+
+        .social-media__icon {
+            color: getColor(light-beige);
+        }
+    }
 }
 
 .footer__email--block {

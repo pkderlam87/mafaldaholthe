@@ -10,7 +10,7 @@ import { Container } from 'react-bootstrap';
 const url = BASE_URL + "/services";
 
 function Home() {
-    const { data, isLoading, isError } = useApi(url); if (isLoading) { return <div>Loading</div>; } if (isError) {
+    const { data, isLoading, isError } = useApi(url); if (isLoading) { return <div className="loading"></div>; } if (isError) {
         return <div>Has error</div>;
     }
     return (

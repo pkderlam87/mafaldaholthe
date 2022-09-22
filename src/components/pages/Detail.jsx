@@ -1,5 +1,6 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
@@ -10,7 +11,6 @@ import Paragraph from '../layout/Paragraph';
 import Carousel from 'react-bootstrap/Carousel';
 import EnquiryForm from '../layout/EnquiryForm';
 import WelcomeOtherPages from '../layout/WelcomeOtherPages';
-import loading from '../../images/loading.gif';
 
 function Detail() {
     const [service, setService] = useState(null);
@@ -49,7 +49,7 @@ function Detail() {
     );
 
     if (loading) {
-        return <img src={loading} alt="Loading" />;
+        return <div className="loading"></div>;
     }
 
     if (error) {
@@ -63,7 +63,7 @@ function Detail() {
                 <div>
                     <Heading content={service.title}></Heading>
                     <Paragraph content={service.description}></Paragraph>
-                    <Button className="btn-secondary">CONTACT US</Button>
+                    <HashLink smooth to={`/detail/${id}#enquiryForm`}><Button className="btn-secondary">CONTACT US</Button></HashLink>
                     <Carousel fade>
                         {
                             images.map((image, i) => {
@@ -82,7 +82,7 @@ function Detail() {
                             })}
                     </Carousel>
                 </div>
-                <EnquiryForm />
+                <EnquiryForm id="enquiryForm" />
             </Container>
 
         </>

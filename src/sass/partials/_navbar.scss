@@ -12,18 +12,24 @@
         outline: none !important;
         box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     }
+
+    .navbar-toggler-icon {
+        position: absolute;
+        top: 30px;
+    }
 }
 
 .navbar-collapse {
     position: absolute !important;
     background-color: getColor(primary-color);
-    top: 90px;
+    top: 70px;
     left: 10px;
     width: 170px;
     z-index: 100;
 
     @media (min-width:992px) {
         background: none;
+        margin-top: 3%;
     }
 }
 

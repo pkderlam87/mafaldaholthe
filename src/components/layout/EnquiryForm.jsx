@@ -1,5 +1,5 @@
 import React from 'react'
-import { FloatingLabel, Form, Container, Button } from 'react-bootstrap';
+import { FloatingLabel, Form, Container, Button, Row, Col } from 'react-bootstrap';
 import Heading from './Heading';
 import { Icon } from '@iconify/react';
 import babyCarriage from '@iconify/icons-fa-solid/baby-carriage';
@@ -58,57 +58,69 @@ function EnquiryForm() {
             <Container>
                 <Heading content="CONTACT US"></Heading>
                 {submitError && <FormError>{submitError}</FormError>}
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <FloatingLabel
-                        controlId="floatingInput"
-                        label="Name*:"
-                        className="mb-3"
-                    >
-                        <Form.Control type="name" placeholder="name" {...register("name")} />
-                        {errors.name && <FormError>{errors.name.message}</FormError>}
-                    </FloatingLabel>
-                    <FloatingLabel
-                        controlId="floatingInput"
-                        label="E-mail*:"
-                        className="mb-3"
-                    >
-                        <Form.Control type="email" placeholder="myemail@email.com" {...register("email")} />
-                        {errors.email && <FormError>{errors.email.message}</FormError>}
-                    </FloatingLabel>
-                    <FloatingLabel
-                        controlId="floatingInput"
-                        label="Phone number:"
-                        className="mb-3"
-                    >
-                        <Form.Control type="phone number" placeholder="+47 99999999" {...register("phone")} />
-                    </FloatingLabel>
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Label>Party*:</Form.Label>
-                        <div className="mb-3">
-                            <Form.Check inline type="checkbox" label="Baby Shower" aria-label="BabyShower" key="BabyShower" {...register("babyShower")} /><Icon icon={babyCarriage} />
-                        </div>
-                        <div className="mb-3">
-                            <Form.Check inline type="checkbox" label="Birthday" aria-label="Birthday" key="Birthday" {...register("birthday")} /><Icon icon={birthdayIcon} />
-                        </div>
-                        <div className="mb-3">
-                            <Form.Check inline type="checkbox" label="Gender Reveal" aria-label="GenderReveal" key="GenderReveal" {...register("genderReveal")} /><Icon icon={genderIntersexBold} />
-                        </div>
-                        <div className="mb-3">
-                            <Form.Check inline type="checkbox" label="Wedding" aria-label="Wedding" key="Wedding" {...register("wedding")} /><Icon icon={weddingCake} />
-                        </div>
-                        <div className="mb-3">
-                            <Form.Check inline type="checkbox" label="Other event" aria-label="Other event" key="other" {...register("otherEvent")} /><Icon icon={balloonHeart} />
-                        </div>
-                    </Form.Group>
-                    <FloatingLabel
-                        controlId="floatingTextarea"
-                        label="Message*:"
-                        className="mb-3"
-                    >
-                        <Form.Control as="textarea" placeholder="Leave a message here" style={{ height: '200px' }} {...register("message")} />
-                        {errors.message && <FormError>{errors.message.message}</FormError>}
-                    </FloatingLabel>
-                    <Button type="submit" className="btn-secondary">{submitting ? "Sending..." : "SEND"}</Button>
+                <form onSubmit={handleSubmit(onSubmit)} >
+                    <Row className="form__enquiry">
+                        <Col sm={12} md={12} lg={6}>
+                            <FloatingLabel
+                                controlId="floatingInput"
+                                label="Name*:"
+                                className="mb-3"
+                            >
+                                <Form.Control type="name" placeholder="name" {...register("name")} />
+                                {errors.name && <FormError>{errors.name.message}</FormError>}
+                            </FloatingLabel>
+                            <FloatingLabel
+                                controlId="floatingInput"
+                                label="E-mail*:"
+                                className="mb-3"
+                            >
+                                <Form.Control type="email" placeholder="myemail@email.com" {...register("email")} />
+                                {errors.email && <FormError>{errors.email.message}</FormError>}
+                            </FloatingLabel>
+                            <FloatingLabel
+                                controlId="floatingInput"
+                                label="Phone number:"
+                                className="mb-3"
+                            >
+                                <Form.Control type="phone number" placeholder="+47 99999999" {...register("phone")} />
+                            </FloatingLabel>
+                        </Col>
+                        <Col sm={12} md={12} lg={12}>
+                            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                                <Form.Label>Party*:</Form.Label>
+                                <div className="form__options-party">
+                                    <div>
+                                        <Form.Check inline type="checkbox" label="Baby Shower" aria-label="BabyShower" key="BabyShower" {...register("babyShower")} /><Icon icon={babyCarriage} />
+                                    </div>
+                                    <div>
+                                        <Form.Check inline type="checkbox" label="Birthday" aria-label="Birthday" key="Birthday" {...register("birthday")} /><Icon icon={birthdayIcon} />
+                                    </div>
+                                    <div>
+                                        <Form.Check inline type="checkbox" label="Gender Reveal" aria-label="GenderReveal" key="GenderReveal" {...register("genderReveal")} /><Icon icon={genderIntersexBold} />
+                                    </div>
+                                    <div>
+                                        <Form.Check inline type="checkbox" label="Wedding" aria-label="Wedding" key="Wedding" {...register("wedding")} /><Icon icon={weddingCake} />
+                                    </div>
+                                    <div>
+                                        <Form.Check inline type="checkbox" label="Other event" aria-label="Other event" key="other" {...register("otherEvent")} /><Icon icon={balloonHeart} />
+                                    </div>
+                                </div>
+                            </Form.Group>
+                        </Col>
+                        <Col sm={12} md={12} lg={6}>
+                            <FloatingLabel
+                                controlId="floatingTextarea"
+                                label="Message*:"
+                                className="mb-3"
+                            >
+                                <Form.Control as="textarea" placeholder="Leave a message here" style={{ height: '200px' }} {...register("message")} />
+                                {errors.message && <FormError>{errors.message.message}</FormError>}
+                            </FloatingLabel>
+                        </Col>
+                        <Col sm={12} md={12} lg={12}>
+                            <Button type="submit" className="btn-secondary">{submitting ? "Sending..." : "SEND"}</Button>
+                        </Col>
+                    </Row>
                 </form>
             </Container>
         </>

@@ -3,5 +3,32 @@
 
     .slide {
         margin: 13% auto 15% auto;
+
+        @media(min-width: 992px) {
+            margin: 0 auto 13% auto;
+        }
     }
+
+}
+
+.carousel {
+    max-width: 90%;
+    margin: 0 auto;
+
+    @media(min-width: 768px) {
+        max-width: 70%;
+    }
+
+    @media(min-width: 992px) {
+        max-width: 97%;
+    }
+}
+
+.carousel-item {
+    @media(min-width:992px) {
+        img {
+            margin: 4% 0 4% 0;
+        }
+    }
+
 }

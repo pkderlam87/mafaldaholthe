@@ -1,13 +1,23 @@
-.about__text {
+.about__wrapper {
     background-color: getColor(card-background);
+}
+
+.about__title {
+    margin: $margin-title;
+
+}
+
+.about__text-carrousel {
     display: flex;
     flex-direction: column;
 
-    h1 {
-        margin: $margin-title;
-    }
-
     p {
         margin-bottom: 15%;
+    }
+
+    @media(min-width: 992px) {
+        display: flex;
+        flex-direction: row;
+
     }
 }

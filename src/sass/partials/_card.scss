@@ -45,14 +45,29 @@
 
             @media (min-width: 768px) {
                 flex-direction: row;
+                margin: 0 auto;
+                align-items: normal;
+
 
                 &.birthday .col:nth-child(1) {
                     order: 7;
+
+                    img {
+                        margin: 6% 0 0 0;
+                    }
+                }
+
+                &.weddings .col:nth-child(1) {
+                    order: 7;
+
+                    img {
+                        margin: 6% 0 0 0;
+                    }
                 }
 
                 img {
                     margin: 6% 0 0 auto;
-                    max-width: 70%;
+                    max-width: 85%;
                 }
 
                 .card__text {

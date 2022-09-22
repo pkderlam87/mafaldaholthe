@@ -31,7 +31,7 @@ function Welcome() {
         axiosData();
     }, []);
     if (loading) {
-        return <div className='loading'><div></div><div></div><div></div><div></div></div>
+        return <div className="loading"></div>
     }
     if (error) {
         console.log(error);

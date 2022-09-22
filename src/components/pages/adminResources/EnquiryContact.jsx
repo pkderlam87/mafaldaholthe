@@ -29,8 +29,8 @@ function EnquiryContact() {
             }
         }
         showContact();
-    }, []);
-    if (loading) return <div>Loading posts...</div>;
+    }, [http]);
+    if (loading) return <div className="loading"></div>;
 
     if (error) return <div>{ }</div>;
     return (

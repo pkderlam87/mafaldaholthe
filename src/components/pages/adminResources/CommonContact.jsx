@@ -4,6 +4,7 @@ import WelcomeOtherPages from '../../layout/WelcomeOtherPages';
 import { Container, Table } from "react-bootstrap";
 import useAxios from "../../hooks/useAxios";
 import AdminMenu from '../../layout/adminLayout/AdminMenu';
+import Heading from '../../layout/Heading';
 import AuthContext from "../../context/AuthContext";
 
 
@@ -40,20 +41,20 @@ function AdminCommonContact() {
     return (
         <>
             <WelcomeOtherPages />
-            <Container>
+            <Container className="admin__wrapper">
                 {auth.user.role.type === "authenticated" ? (
                     <>
-                        <AdminMenu />
+                        <AdminMenu className="admin__navbar--inside" breadcrumb="active" />
                     </>
                 ) : (
                     <>
                     </>
                 )}
+                <Heading content="CONTACT" />
                 <ul className="contacts">
-                    <Table striped bordered hover>
+                    <Table bordered hover responsive>
                         <thead>
                             <tr>
-                                <th>#</th>
                                 <th>Name</th>
                                 <th>Date</th>
                                 <th>Email</th>
@@ -64,9 +65,8 @@ function AdminCommonContact() {
                             return (
                                 <tbody key={contact.id}>
                                     <tr>
-                                        <td>{contact.id}</td>
+                                        <td>{contact.created_at.slice(0, -5)}</td>
                                         <td>{contact.name}</td>
-                                        <td>{contact.created_at}</td>
                                         <td>{contact.email}</td>
                                         <td>{contact.message}</td>
                                     </tr>

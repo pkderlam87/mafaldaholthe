@@ -63,7 +63,7 @@ function Detail() {
                 <div>
                     <Heading content={service.title}></Heading>
                     <Paragraph content={service.description}></Paragraph>
-                    <HashLink smooth to={`/detail/${id}#enquiryForm`}><Button className="btn-secondary">CONTACT US</Button></HashLink>
+                    <HashLink smooth to={`/detail/${id}#enquiryForm`} className="detail__button--enquiry"><Button className="btn-secondary">CONTACT US</Button></HashLink>
                     <Carousel fade>
                         {
                             images.map((image, i) => {
@@ -82,7 +82,7 @@ function Detail() {
                             })}
                     </Carousel>
                 </div>
-                <EnquiryForm id="enquiryForm" />
+                <EnquiryForm />
             </Container>
 
         </>

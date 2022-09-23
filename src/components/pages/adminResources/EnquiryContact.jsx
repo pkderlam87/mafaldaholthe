@@ -4,6 +4,7 @@ import WelcomeOtherPages from '../../layout/WelcomeOtherPages';
 import { Container, Table } from "react-bootstrap";
 import useAxios from "../../hooks/useAxios";
 import AdminMenu from '../../layout/adminLayout/AdminMenu';
+import Heading from '../../layout/Heading';
 
 function EnquiryContact() {
     const [enquiries, setEnquiries] = useState([]);
@@ -36,14 +37,14 @@ function EnquiryContact() {
     return (
         <>
             <WelcomeOtherPages />
-            <Container>
-                <AdminMenu />
+            <Container className="admin__wrapper">
+                <AdminMenu className="admin__navbar--inside" breadcrumb="active" />
                 <Container>
+                    <Heading content="ENQUIRY" />
                     <ul className="contacts">
-                        <Table striped bordered hover>
+                        <Table bordered hover responsive>
                             <thead>
                                 <tr>
-                                    <th>#</th>
                                     <th>Name</th>
                                     <th>Date</th>
                                     <th>Email</th>
@@ -54,9 +55,8 @@ function EnquiryContact() {
                                 return (
                                     <tbody key={enquiry.id}>
                                         <tr>
-                                            <td>{enquiry.id}</td>
+                                            <td>{enquiry.created_at.slice(0, -5)}</td>
                                             <td>{enquiry.name}</td>
-                                            <td>{enquiry.created_at}</td>
                                             <td>{enquiry.email}</td>
                                             <td>{enquiry.message}</td>
                                         </tr>

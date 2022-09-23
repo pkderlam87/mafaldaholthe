@@ -6,11 +6,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import AuthContext from "../context/AuthContext";
 import logoBlack from "../../Logo-MH-Balloon-Black-Text.png";
 import { Icon } from '@iconify/react';
-import houseUser from '@iconify/icons-fa-solid/house-user';
+import userAdmin from '@iconify/icons-carbon/user-admin';
 import homeHeart from '@iconify/icons-bx/home-heart';
 import balloonHeart from '@iconify/icons-bi/balloon-heart';
 import loginLine from '@iconify/icons-majesticons/login-line';
 import logoutLine from '@iconify/icons-majesticons/logout-line';
+import foodCake12Regular from '@iconify/icons-fluent/food-cake-12-regular';
 import useApi from '../hooks/useAPI';
 import { BASE_URL } from '../../constants/api';
 import SearchBar from './SearchBar';
@@ -43,7 +44,7 @@ function NavBar() {
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
                                 <Link to="/" className="nav__menu--item"><Icon icon={homeHeart} /> Home</Link>
-                                <NavDropdown className="nav__menu--drop" title="Parties" id="basic-nav-dropdown">
+                                <Icon icon={foodCake12Regular} /><NavDropdown className="nav__menu--drop" title="Parties" id="basic-nav-dropdown">
                                     {data.map((service) => {
                                         const { id, title } = service;
                                         return (
@@ -54,7 +55,7 @@ function NavBar() {
                                 <Link to="/about" className="nav__menu--item"><Icon icon={balloonHeart} /> About</Link>
                                 {auth ? (
                                     <>
-                                        <Link to="/admin" className="nav__menu--item"><Icon icon={houseUser} />Admin</Link>
+                                        <Link to="/admin" className="nav__menu--item"><Icon icon={userAdmin} />Admin</Link>
                                         <div
                                             onClick={logout} className="nav__menu--item"><Icon icon={logoutLine} /> Logout</div>
                                     </>

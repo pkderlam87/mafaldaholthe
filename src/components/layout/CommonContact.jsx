@@ -34,7 +34,6 @@ function CommonContact() {
         try {
             const response = await axios.post(url, data);
             console.log("response", response.data);
-
         } catch (error) {
             console.log("error", error);
             setSubmitError(error.toString());

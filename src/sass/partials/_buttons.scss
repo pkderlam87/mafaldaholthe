@@ -36,6 +36,7 @@ button:focus:not(:focus-visible) {
     width: 70%;
     margin: 3% auto 10% auto;
     padding: 2%;
+    text-decoration: none;
 
     @media (min-width: 768px) {
         width: 50%;
@@ -52,4 +53,8 @@ button:focus:not(:focus-visible) {
         justify-content: center;
         align-items: center;
     }
+}
+
+.detail__button--enquiry {
+    text-decoration: none;
 }

@@ -15,19 +15,21 @@ function Admin({ children }) {
     return (
         <>
             <WelcomeOtherPages />
-            <Container>
-                <Heading content="ADMIN PAGE" />
-                <SubHeadingAdmin />
-                {auth.user.role.type === "authenticated" ? (
-                    <>
-                        <AdminMenu />
-                    </>
-                ) : (
-                    <>
-                        <AdminCommonContact />
-                    </>
-                )}
-            </Container>
+            <div className="admin__wrapper">
+                <Container>
+                    <Heading content="ADMIN PAGE" />
+                    <SubHeadingAdmin />
+                    {auth.user.role.type === "authenticated" ? (
+                        <>
+                            <AdminMenu />
+                        </>
+                    ) : (
+                        <>
+                            <AdminCommonContact />
+                        </>
+                    )}
+                </Container>
+            </div>
         </>
     )
 }

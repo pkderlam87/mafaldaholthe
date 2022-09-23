@@ -54,8 +54,8 @@ function AddService() {
     return (
         <>
             <WelcomeOtherPages />
-            <Container>
-                <AdminMenu />
+            <Container className="admin__wrapper">
+                <AdminMenu className="admin__navbar--inside" breadcrumb="active" />
                 <Heading content="ADD SERVICE" />
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {serverError && <FormError>{serverError}</FormError>}

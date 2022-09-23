@@ -8,7 +8,7 @@ import { BASE_URL, TOKEN_PATH } from "../../constants/api";
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
 import Heading from '../layout/Heading';
-import { Container, FloatingLabel, Form } from 'react-bootstrap';
+import { FloatingLabel, Form } from 'react-bootstrap';
 import WelcomeOtherPages from '../layout/WelcomeOtherPages';
 
 
@@ -51,7 +51,7 @@ function Login() {
 
     return (<>
         <WelcomeOtherPages />
-        <Container className="login">
+        <div className="login">
             <Heading content="Log in"></Heading>
             <form onSubmit={handleSubmit(onSubmit)}>
                 {loginError && <span>{loginError}</span>}
@@ -70,7 +70,7 @@ function Login() {
                 </FloatingLabel>
                 <button className='btn btn-secondary'>{submitting ? "Login in..." : "Login"}</button>
             </form>
-        </Container>
+        </div>
     </>
     );
 

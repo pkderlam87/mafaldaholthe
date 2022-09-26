@@ -1,11 +1,11 @@
 import React from 'react';
-import Heading from "../layout/Heading";
-import Paragraph from '../layout/Paragraph';
+import Heading from "../components/layout/Heading";
+import Paragraph from '../components/layout/Paragraph';
 import Carousel from 'react-bootstrap/Carousel';
-import image1 from '../../images/about-image-christmas.jpg';
-import image2 from '../../images/about-image-halloween.jpg';
-import image3 from '../../images/about-image-table-setting.jpg';
-import WelcomeOtherPages from '../layout/WelcomeOtherPages';
+import image1 from '../images/about-image-christmas.jpg';
+import image2 from '../images/about-image-halloween.jpg';
+import image3 from '../images/about-image-table-setting.jpg';
+import WelcomeOtherPages from '../components/layout/WelcomeOtherPages';
 import { Container, Row, Col } from 'react-bootstrap';
 
 function About() {

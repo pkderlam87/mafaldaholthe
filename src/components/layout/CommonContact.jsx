@@ -8,6 +8,9 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import axios from "axios";
 import FormError from "../common/FormError";
+import FormSent from '../common/FormSent';
+import SendEmail from '../common/SendEmail';
+
 
 
 const url = BASE_URL + "/common-contact-forms";
@@ -22,7 +25,7 @@ const schema = yup.object().shape({
 function CommonContact() {
     const [submitting, setSubmitting] = useState(false);
     const [submitError, setSubmitError] = useState(null);
-
+    const [formSentMessage, setFormSentMessage] = useState(false);
 
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
@@ -33,7 +36,8 @@ function CommonContact() {
         setSubmitError(null);
         try {
             const response = await axios.post(url, data);
-            console.log("response", response.data);
+            setFormSentMessage(true);
+            SendEmail(response);
         } catch (error) {
             console.log("error", error);
             setSubmitError(error.toString());
@@ -46,6 +50,7 @@ function CommonContact() {
             <div className="home__contact-form">
                 <Heading content="CONTACT US"></Heading>
                 {submitError && <FormError>{submitError}</FormError>}
+                {formSentMessage && <FormSent></FormSent>}
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <Row>
                         <Col sm={12} md={6} lg={6}>

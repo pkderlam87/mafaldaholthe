@@ -47,3 +47,16 @@ form {
         gap: 5px;
     }
 }
+
+.form__message--success {
+    background-color: getColor(success-message);
+    border: 2px solid getColor(success-message);
+    padding: 3%;
+    font-size: 1.2rem;
+}
+
+.form__message--error {
+    background-color: getColor(error-message);
+    border: 2px solid getColor(error-message);
+
+}

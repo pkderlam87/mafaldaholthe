@@ -5,15 +5,16 @@ import {
   Route,
 } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from "./components/pages/Home";
-import About from "./components/pages/About";
-import Detail from "./components/pages/Detail";
-import Login from "./components/pages/Login";
-import Admin from "./components/pages/Admin";
-import AddService from "./components/pages/adminResources/AddService";
-import CommonContact from "./components/pages/adminResources/CommonContact";
-import EnquiryContact from "./components/pages/adminResources/EnquiryContact"
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Detail from "./pages/Detail";
+import Login from "./pages/Login";
+import Admin from "./pages/Admin";
+import AddService from "./pages/adminResources/AddService";
+import CommonContact from "./pages/adminResources/CommonContact";
+import EnquiryContact from "./pages/adminResources/EnquiryContact"
 import NavBar from "./components/layout/NavBar";
+import SearchBar from "./components/layout/SearchBar";
 import { AuthProvider } from "./components/context/AuthContext";
 import Footer from "./components/layout/Footer";
 import './sass/styles.scss';
@@ -24,6 +25,7 @@ function App() {
       <AuthProvider>
         <BrowserRouter>
           <NavBar />
+          <SearchBar />
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/detail/:id" element={<Detail />} />

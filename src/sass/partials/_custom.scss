@@ -13,6 +13,8 @@ $colors: (
     inner-shadow: #E3BBB0,
     card-background: rgba(232, 224, 209, 0.3),
     dark-orange:#E5CDB6,
+    error-message:rgba(205, 107, 107, 0.809),
+    success-message:rgba(152, 227, 198, 0.802),
 );
 
 @function getColor($color) {

@@ -14,9 +14,13 @@
 
 .welcome-other-pages {
     background-color: getColor(primary-color);
-    padding: 29%;
+    padding: 22%;
+
+    @media (min-width:768px) {
+        padding: 15%;
+    }
 
     @media (min-width:992px) {
-        padding: 13%;
+        padding: 11%;
     }
 }

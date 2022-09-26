@@ -1,11 +1,11 @@
 import React from 'react'
-import WelcomeOtherPages from '../layout/WelcomeOtherPages';
-import Heading from '../layout/Heading';
-import SubHeadingAdmin from '../layout/SubHeadingAdmin';
+import WelcomeOtherPages from '../components/layout/WelcomeOtherPages';
+import Heading from '../components/layout/Heading';
+import SubHeadingAdmin from '../components/layout/SubHeadingAdmin';
 import { Container } from 'react-bootstrap';
 import { useContext } from 'react';
-import AuthContext from "../context/AuthContext";
-import AdminMenu from '../layout/adminLayout/AdminMenu';
+import AuthContext from "../components/context/AuthContext";
+import AdminMenu from '../components/layout/adminLayout/AdminMenu';
 import AdminCommonContact from './adminResources/CommonContact';
 
 

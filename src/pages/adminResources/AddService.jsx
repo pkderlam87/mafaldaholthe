@@ -4,12 +4,12 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from 'react-hook-form';
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import useAxios from "../../hooks/useAxios";
-import WelcomeOtherPages from '../../layout/WelcomeOtherPages';
+import useAxios from "../../components/hooks/useAxios";
+import WelcomeOtherPages from '../../components/layout/WelcomeOtherPages';
 import { Container, FloatingLabel, Form } from "react-bootstrap";
-import Heading from '../../layout/Heading';
-import FormError from "../../common/FormError";
-import AdminMenu from '../../layout/adminLayout/AdminMenu';
+import Heading from '../../components/layout/Heading';
+import FormError from "../../components/common/FormError";
+import AdminMenu from '../../components/layout/adminLayout/AdminMenu';
 
 const schema = yup.object().shape({
     title: yup.string().required("The service's title is required"),

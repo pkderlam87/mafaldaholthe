@@ -2,6 +2,16 @@
     position: absolute;
     top: 0;
     align-items: center;
+
+    .container {
+        align-items: baseline;
+        margin-top: 2%;
+    }
+
+    & .active {
+        font-weight: 900;
+        text-decoration: underline;
+    }
 }
 
 .navbar-toggler {
@@ -15,14 +25,14 @@
 
     .navbar-toggler-icon {
         position: absolute;
-        top: 30px;
+        top: 70px;
     }
 }
 
 .navbar-collapse {
     position: absolute !important;
     background-color: getColor(primary-color);
-    top: 70px;
+    top: 100px;
     left: 10px;
     width: 170px;
     z-index: 100;
@@ -75,6 +85,7 @@
 }
 
 .navbar-brand {
+
     @media (min-width:768px) {
         display: flex;
         justify-content: center;
@@ -83,9 +94,9 @@
     @media (min-width:992px) {
         margin-right: 0;
 
-        img {
-            margin-left: 5rem;
-        }
+        //img {
+        //    margin-left: 5rem;
+        //}
     }
 }
 

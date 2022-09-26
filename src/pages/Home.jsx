@@ -1,16 +1,16 @@
 import React from 'react';
-import { BASE_URL } from '../../constants/api';
-import ResultHome from '../layout/ResultHome';
-import Review from '../layout/Review';
-import CommonContact from '../layout/CommonContact';
-import Welcome from '../layout/Welcome';
-import useApi from '../hooks/useAPI';
+import { BASE_URL } from '../constants/api';
+import ResultHome from '../components/layout/ResultHome';
+import Review from '../components/layout/Review';
+import CommonContact from '../components/layout/CommonContact';
+import Welcome from '../components/layout/Welcome';
+import useApi from '../components/hooks/useAPI';
 import { Container } from 'react-bootstrap';
 
 const url = BASE_URL + "/services";
 
 function Home() {
-    const { data, isLoading, isError } = useApi(url); if (isLoading) { return <div className="loading"></div>; } if (isError) {
+    const { data, isLoading, isError } = useApi(url); if (isLoading) { return <div></div>; } if (isError) {
         return <div>Has error</div>;
     }
     return (

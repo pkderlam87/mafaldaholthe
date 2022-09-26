@@ -1,11 +1,11 @@
 import React from 'react';
 import { useState, useEffect, useContext } from "react";
-import WelcomeOtherPages from '../../layout/WelcomeOtherPages';
+import WelcomeOtherPages from '../../components/layout/WelcomeOtherPages';
 import { Container, Table } from "react-bootstrap";
-import useAxios from "../../hooks/useAxios";
-import AdminMenu from '../../layout/adminLayout/AdminMenu';
-import Heading from '../../layout/Heading';
-import AuthContext from "../../context/AuthContext";
+import useAxios from "../../components/hooks/useAxios";
+import AdminMenu from '../../components/layout/adminLayout/AdminMenu';
+import Heading from '../../components/layout/Heading';
+import AuthContext from "../../components/context/AuthContext";
 
 
 function AdminCommonContact() {

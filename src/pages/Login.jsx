@@ -4,12 +4,12 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
-import { BASE_URL, TOKEN_PATH } from "../../constants/api";
+import { BASE_URL, TOKEN_PATH } from "../constants/api";
 import { useNavigate } from 'react-router-dom';
-import AuthContext from '../context/AuthContext';
-import Heading from '../layout/Heading';
+import AuthContext from '../components/context/AuthContext';
+import Heading from '../components/layout/Heading';
 import { FloatingLabel, Form } from 'react-bootstrap';
-import WelcomeOtherPages from '../layout/WelcomeOtherPages';
+import WelcomeOtherPages from '../components/layout/WelcomeOtherPages';
 
 
 const url = BASE_URL + TOKEN_PATH;

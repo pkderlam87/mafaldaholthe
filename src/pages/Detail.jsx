@@ -5,12 +5,12 @@ import { useState, useEffect } from "react";
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { Button, Container } from 'react-bootstrap';
-import { BASE_URL } from '../../constants/api'
-import Heading from '../layout/Heading';
-import Paragraph from '../layout/Paragraph';
+import { BASE_URL } from '../constants/api'
+import Heading from '../components/layout/Heading';
+import Paragraph from '../components/layout/Paragraph';
 import Carousel from 'react-bootstrap/Carousel';
-import EnquiryForm from '../layout/EnquiryForm';
-import WelcomeOtherPages from '../layout/WelcomeOtherPages';
+import EnquiryForm from '../components/layout/EnquiryForm';
+import WelcomeOtherPages from '../components/layout/WelcomeOtherPages';
 
 function Detail() {
     const [service, setService] = useState(null);

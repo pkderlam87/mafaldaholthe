@@ -14,6 +14,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import axios from "axios";
 import FormError from "../common/FormError";
+import FormSent from '../common/FormSent';
 
 const url = BASE_URL + "/enquiry-forms";
 
@@ -33,6 +34,7 @@ function EnquiryForm() {
 
     const [submitting, setSubmitting] = useState(false);
     const [submitError, setSubmitError] = useState(null);
+    const [formSentMessage, setFormSentMessage] = useState(false);
 
 
     const { register, handleSubmit, formState: { errors } } = useForm({
@@ -45,6 +47,7 @@ function EnquiryForm() {
         try {
             const response = await axios.post(url, data);
             console.log("response", response.data);
+            setFormSentMessage(true);
         } catch (error) {
             console.log("error", error);
             setSubmitError(error.toString());
@@ -58,6 +61,7 @@ function EnquiryForm() {
             <Container id="enquiryForm">
                 <Heading content="CONTACT US"></Heading>
                 {submitError && <FormError>{submitError}</FormError>}
+                {formSentMessage && <FormSent></FormSent>}
                 <form onSubmit={handleSubmit(onSubmit)} >
                     <Row className="form__enquiry">
                         <Col sm={12} md={12} lg={6}>
@@ -87,7 +91,7 @@ function EnquiryForm() {
                         </Col>
                         <Col sm={12} md={12} lg={12}>
                             <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                <Form.Label>Party*:</Form.Label>
+                                <Form.Label>Party:</Form.Label>
                                 <div className="form__options-party">
                                     <div>
                                         <Form.Check inline type="checkbox" label="Baby Shower" aria-label="BabyShower" key="BabyShower" {...register("babyShower")} /><Icon icon={babyCarriage} />

@@ -32,7 +32,6 @@ function AddService() {
         setServerError(null);
 
         inputData.status = "publish";
-        console.log(inputData.title, inputData.description, inputData.files, inputData.status);
 
         const formData = new FormData();
         for (const image of inputData.files) {
@@ -54,8 +53,9 @@ function AddService() {
     return (
         <>
             <WelcomeOtherPages />
+
+            <AdminMenu className="admin__navbar--inside" breadcrumb="active" />
             <Container className="admin__wrapper">
-                <AdminMenu className="admin__navbar--inside" breadcrumb="active" />
                 <Heading content="ADD SERVICE" />
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {serverError && <FormError>{serverError}</FormError>}

@@ -4,6 +4,10 @@ import AuthContext from "../context/AuthContext";
 import { BASE_URL } from "../../constants/api";
 
 const url = BASE_URL;
+/**
+ * This is a reusable hook function to put token in the headers   
+ * @returns token
+ */
 
 export default function useAxios() {
     const [auth] = useContext(AuthContext);

@@ -11,6 +11,7 @@ import Paragraph from '../components/layout/Paragraph';
 import Carousel from 'react-bootstrap/Carousel';
 import EnquiryForm from '../components/layout/EnquiryForm';
 import WelcomeOtherPages from '../components/layout/WelcomeOtherPages';
+import FormError from '../components/common/FormError';
 
 function Detail() {
     const [service, setService] = useState(null);
@@ -53,7 +54,7 @@ function Detail() {
     }
 
     if (error) {
-        return <div>An error occurred: {error}</div>;
+        return <FormError>{error}</FormError>;
     }
 
     return (

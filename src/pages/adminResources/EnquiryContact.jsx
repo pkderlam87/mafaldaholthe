@@ -5,6 +5,7 @@ import { Container, Table } from "react-bootstrap";
 import useAxios from "../../components/hooks/useAxios";
 import AdminMenu from '../../components/layout/adminLayout/AdminMenu';
 import Heading from '../../components/layout/Heading';
+import FormError from '../../components/common/FormError';
 
 function EnquiryContact() {
     const [enquiries, setEnquiries] = useState([]);
@@ -19,7 +20,6 @@ function EnquiryContact() {
 
             try {
                 const response = await http.get("/enquiry-forms");
-                console.log("response", response.data);
                 setEnquiries(response.data);
 
             } catch (error) {
@@ -33,40 +33,37 @@ function EnquiryContact() {
     }, [http]);
     if (loading) return <div className="loading"></div>;
 
-    if (error) return <div>{ }</div>;
+    if (error) return <FormError>{error}</FormError>;
     return (
         <>
             <WelcomeOtherPages />
+            <AdminMenu className="admin__navbar--inside" breadcrumb="active" />
             <Container className="admin__wrapper">
-                <AdminMenu className="admin__navbar--inside" breadcrumb="active" />
-                <Container>
-                    <Heading content="ENQUIRY" />
-                    <ul className="contacts">
-                        <Table bordered hover responsive>
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Date</th>
-                                    <th>Email</th>
-                                    <th>Message</th>
-                                </tr>
-                            </thead>
-                            {enquiries.map((enquiry) => {
-                                return (
-                                    <tbody key={enquiry.id}>
-                                        <tr>
-                                            <td>{enquiry.created_at.slice(0, -5)}</td>
-                                            <td>{enquiry.name}</td>
-                                            <td>{enquiry.email}</td>
-                                            <td>{enquiry.message}</td>
-                                        </tr>
-                                    </tbody>
-                                );
-                            })}
-                        </Table>
-                    </ul>
-                </Container>
-
+                <Heading content="ENQUIRY" />
+                <ul className="contacts">
+                    <Table bordered hover responsive>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Message</th>
+                            </tr>
+                        </thead>
+                        {enquiries.map((enquiry) => {
+                            return (
+                                <tbody key={enquiry.id}>
+                                    <tr>
+                                        <td>{enquiry.created_at.slice(0, -5)}</td>
+                                        <td>{enquiry.name}</td>
+                                        <td>{enquiry.email}</td>
+                                        <td>{enquiry.message}</td>
+                                    </tr>
+                                </tbody>
+                            );
+                        })}
+                    </Table>
+                </ul>
             </Container>
         </>
     )

@@ -6,12 +6,13 @@ import CommonContact from '../components/layout/CommonContact';
 import Welcome from '../components/layout/Welcome';
 import useApi from '../components/hooks/useAPI';
 import { Container } from 'react-bootstrap';
+import FormError from '../components/common/FormError';
 
 const url = BASE_URL + "/services";
 
 function Home() {
     const { data, isLoading, isError } = useApi(url); if (isLoading) { return <div></div>; } if (isError) {
-        return <div>Has error</div>;
+        return <FormError>{isError}</FormError>;
     }
     return (
         <>

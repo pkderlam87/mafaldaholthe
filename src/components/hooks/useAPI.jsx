@@ -1,5 +1,10 @@
 import { useState, useEffect } from 'react';
-
+/**
+ * This is a reusable hook function to fetch an URL
+ * 
+ * @param {string} url - base url + /endpoint
+ * @returns data, error or loading
+ */
 function useApi(url) {
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);

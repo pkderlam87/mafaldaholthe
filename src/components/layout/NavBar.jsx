@@ -13,6 +13,7 @@ import loginLine from '@iconify/icons-majesticons/login-line';
 import logoutLine from '@iconify/icons-majesticons/logout-line';
 import useApi from '../hooks/useAPI';
 import { BASE_URL } from '../../constants/api';
+import FormError from "../common/FormError";
 
 const urlServices = BASE_URL + "/services";
 
@@ -26,7 +27,7 @@ function NavBar() {
         history("/");
     }
     const { data, isLoading, isError } = useApi(urlServices); if (isLoading) { return <div className="loading"></div>; } if (isError) {
-        return <div>Has error</div>;
+        return <FormError>{isError}</FormError>;
     }
     return (
         <Container className="navbar">

@@ -37,7 +37,6 @@ function CommonContact() {
         try {
             const response = await axios.post(url, data);
             setFormSentMessage(true);
-            console.log("response", response.data);
             // reset form
             reset({
                 name: "",

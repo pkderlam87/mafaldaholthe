@@ -10,6 +10,7 @@ import AuthContext from '../components/context/AuthContext';
 import Heading from '../components/layout/Heading';
 import { FloatingLabel, Form } from 'react-bootstrap';
 import WelcomeOtherPages from '../components/layout/WelcomeOtherPages';
+import FormError from '../components/common/FormError';
 
 
 const url = BASE_URL + TOKEN_PATH;
@@ -37,10 +38,8 @@ function Login() {
 
         try {
             const response = await axios.post(url, data);
-            console.log("response", response.data);
             setAuth(response.data);
             history("/admin");
-            console.log(auth);
         } catch (error) {
             console.log("error", error);
             setLoginError(error.toString());
@@ -54,7 +53,7 @@ function Login() {
         <div className="login">
             <Heading content="Log in"></Heading>
             <form onSubmit={handleSubmit(onSubmit)}>
-                {loginError && <span>{loginError}</span>}
+                {loginError && <FormError>{loginError}</FormError>}
                 <FloatingLabel
                     controlId="floatingInput"
                     label="Username"

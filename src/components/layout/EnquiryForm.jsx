@@ -46,7 +46,6 @@ function EnquiryForm() {
         setSubmitError(null);
         try {
             const response = await axios.post(url, data);
-            console.log("response", response.data);
             setFormSentMessage(true);
             // reset form
             reset({

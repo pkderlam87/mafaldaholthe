@@ -6,6 +6,12 @@ import contactMailOutline from '@iconify/icons-material-symbols/contact-mail-out
 import licenseThirdParty from '@iconify/icons-carbon/license-third-party';
 import circlePlus from '@iconify/icons-akar-icons/circle-plus';
 
+/**
+ * 
+ * @param {string} props - give a special className to the admin navbar 
+ * @returns - HTML menu in the admin side, after the user login
+ */
+
 function AdminMenu(props) {
     return (
         <>

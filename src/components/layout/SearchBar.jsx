@@ -25,7 +25,6 @@ function SearchBar() {
 
     const onSuggestHandler = (text) => {
         setText(text);
-        console.log(text);
         setSuggestions([]);
     }
     const onChangeHandler = (text) => {
@@ -36,7 +35,6 @@ function SearchBar() {
                 return service.title.includes(text)
             })
         }
-        console.log('matches', matches);
         setSuggestions(matches);
         setText(text);
     }

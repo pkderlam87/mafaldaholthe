@@ -117,6 +117,10 @@
     background-color: getColor(background-orange);
     margin: 3% auto;
     padding: 10% 0;
+
+    @media(min-width: 768px) {
+        margin: 0;
+    }
 }
 
 .admin__navbar--link {

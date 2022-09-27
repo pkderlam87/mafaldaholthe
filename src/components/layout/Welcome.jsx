@@ -2,6 +2,7 @@ import React from 'react';
 import { BASE_URL } from '../../constants/api';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import FormError from '../common/FormError';
 
 
 const url = BASE_URL + "/home";
@@ -35,7 +36,7 @@ function Welcome() {
     }
     if (error) {
         console.log(error);
-        return <div>An error occurred: {error}</div>
+        return <FormError>{error}</FormError>
     }
     return (
         <>

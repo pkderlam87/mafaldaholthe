@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FloatingLabel, Form, Row, Col } from 'react-bootstrap';
 import Heading from './Heading';
 import { BASE_URL } from '../../constants/api';
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
 import axios from "axios";
 import FormError from "../common/FormError";
 import FormSent from '../common/FormSent';
-import SendEmail from '../common/SendEmail';
+//import SendEmail from '../common/SendEmail';
 
 
 
@@ -24,11 +23,12 @@ const schema = yup.object().shape({
 
 function CommonContact() {
     const [submitting, setSubmitting] = useState(false);
+    //const [contact, setContact] = useState(null);
     const [submitError, setSubmitError] = useState(null);
     const [formSentMessage, setFormSentMessage] = useState(false);
 
-    const { register, handleSubmit, formState: { errors } } = useForm({
-        resolver: yupResolver(schema),
+    const { register, handleSubmit, reset, formState: { errors } } = useForm({
+        resolver: yupResolver(schema)
     });
 
     async function onSubmit(data) {
@@ -37,7 +37,15 @@ function CommonContact() {
         try {
             const response = await axios.post(url, data);
             setFormSentMessage(true);
-            SendEmail(response);
+            console.log("response", response.data);
+            // reset form
+            reset({
+                name: "",
+                email: "",
+                phone: "",
+                message: ""
+            });
+            //SendEmail(response);
         } catch (error) {
             console.log("error", error);
             setSubmitError(error.toString());

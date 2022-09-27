@@ -37,7 +37,7 @@ function EnquiryForm() {
     const [formSentMessage, setFormSentMessage] = useState(false);
 
 
-    const { register, handleSubmit, formState: { errors } } = useForm({
+    const { register, handleSubmit, reset, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
     });
 
@@ -48,6 +48,18 @@ function EnquiryForm() {
             const response = await axios.post(url, data);
             console.log("response", response.data);
             setFormSentMessage(true);
+            // reset form
+            reset({
+                name: "",
+                email: "",
+                phone: "",
+                babyShower: "",
+                birthday: "",
+                genderReveal: "",
+                wedding: "",
+                otherEvent: "",
+                message: ""
+            });
         } catch (error) {
             console.log("error", error);
             setSubmitError(error.toString());

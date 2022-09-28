@@ -7,12 +7,15 @@ import { Link } from "react-router-dom";
 import { Container } from 'react-bootstrap';
 
 const url = BASE_URL + "/services";
-
+/**
+ * This function will provider the search bar  
+ * @returns <input>
+ */
 function SearchBar() {
     const [services, setServices] = useState([]);
     const [text, setText] = useState("");
     const [suggestions, setSuggestions] = useState([]);
-
+    //To provider the suggestions this useEffect function call the API - BASE_URL + "/services"
     useEffect(() => {
         const loadServices = async () => {
             const response = await axios.get(url);

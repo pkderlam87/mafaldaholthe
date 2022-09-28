@@ -2,6 +2,7 @@
     background-color: getColor(card-background);
     display: flex;
     flex-direction: column;
+    flex: 1 0 auto;
 
     h1 {
         margin: $margin-title;

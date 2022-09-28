@@ -11,12 +11,18 @@ import Heading from '../../components/layout/Heading';
 import FormError from "../../components/common/FormError";
 import AdminMenu from '../../components/layout/adminLayout/AdminMenu';
 
+/**
+ * YUP will verify the data requirements and show an error message if something is wrong 
+ */
 const schema = yup.object().shape({
     title: yup.string().required("The service's title is required"),
     description: yup.string().required("The service's description is required"),
     files: yup.mixed()
 });
-
+/**
+ * This function will provide a form to post a new service
+ * @returns <Form>
+ */
 function AddService() {
     const [submitting, setSubmitting] = useState(false);
     const [serverError, setServerError] = useState(null);
@@ -31,17 +37,23 @@ function AddService() {
         setSubmitting(true);
         setServerError(null);
 
+        //It's hard code
         inputData.status = "publish";
 
+        //The formData will add the images
         const formData = new FormData();
         for (const image of inputData.files) {
             formData.append('files.images', image);
         }
+
+        //Will add in the same object the data and images
         const { image, ...data } = inputData;
         formData.append("data", JSON.stringify(data));
         try {
+            //Will post in the "/services" endpoint the object formData
             const response = await http.post("/services", formData);
-            console.log("response", response.data);
+
+            //After post the new service the admin user go to admin page
             history("/admin");
         } catch (error) {
             console.log("error", error);
@@ -53,7 +65,6 @@ function AddService() {
     return (
         <>
             <WelcomeOtherPages />
-
             <AdminMenu className="admin__navbar--inside" breadcrumb="active" />
             <Container className="admin__wrapper">
                 <Heading content="ADD SERVICE" />

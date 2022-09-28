@@ -7,6 +7,11 @@ import pinterestSquare from '@iconify/icons-jam/pinterest-square';
 import Paragraph from './Paragraph';
 import { Col, Container, Row } from 'react-bootstrap';
 
+/**
+ * This function will provide the footer
+ * @returns <Footer>
+ */
+
 function Footer() {
     return (
         <>

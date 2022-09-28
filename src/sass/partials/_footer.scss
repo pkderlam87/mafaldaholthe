@@ -17,7 +17,10 @@
         display: flex;
 
         .social-media__icon {
-            color: getColor(light-beige);
+            svg {
+                color: getColor(light-beige);
+            }
+
         }
     }
 }

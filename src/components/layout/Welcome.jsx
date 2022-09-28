@@ -6,7 +6,10 @@ import FormError from '../common/FormError';
 
 
 const url = BASE_URL + "/home";
-
+/**
+ * This function will provider the hero_banner and the title "Parties decor" to the home page
+ * @returns <div> with the hero_banner
+ */
 function Welcome() {
     const [welcome, setWelcome] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -32,7 +35,7 @@ function Welcome() {
         axiosData();
     }, []);
     if (loading) {
-        return <div className="loading"></div>
+        return <div></div>
     }
     if (error) {
         console.log(error);

@@ -13,6 +13,11 @@ import EnquiryForm from '../components/layout/EnquiryForm';
 import WelcomeOtherPages from '../components/layout/WelcomeOtherPages';
 import FormError from '../components/common/FormError';
 
+/**
+ * This function is a specific request to a "/services/+ id" endpoint.
+ * @returns <Detail>
+ */
+
 function Detail() {
     const [service, setService] = useState(null);
     const [images, setImages] = useState([]);

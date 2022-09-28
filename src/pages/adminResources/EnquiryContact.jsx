@@ -7,6 +7,11 @@ import AdminMenu from '../../components/layout/adminLayout/AdminMenu';
 import Heading from '../../components/layout/Heading';
 import FormError from '../../components/common/FormError';
 
+/**
+ * This function will print the get request to the endpoint "/enquiry-forms". Only the Authenticated user can access this feature.
+ * @returns <table> with the data from the enquiry contact form, in the Detail page.
+ */
+
 function EnquiryContact() {
     const [enquiries, setEnquiries] = useState([]);
     const [loading, setLoading] = useState(true);

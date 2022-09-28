@@ -10,6 +10,7 @@ const url = BASE_URL;
  */
 
 export default function useAxios() {
+    //This useContext provider the token for authenticated users
     const [auth] = useContext(AuthContext);
 
     const apiClient = axios.create({

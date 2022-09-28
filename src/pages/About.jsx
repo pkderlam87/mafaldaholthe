@@ -8,6 +8,11 @@ import image3 from '../images/about-image-table-setting.jpg';
 import WelcomeOtherPages from '../components/layout/WelcomeOtherPages';
 import { Container, Row, Col } from 'react-bootstrap';
 
+/**
+ * This function will provide the about content
+ * @returns <About>
+ */
+
 function About() {
     return (
         <>

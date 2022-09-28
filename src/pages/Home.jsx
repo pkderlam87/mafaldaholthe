@@ -9,7 +9,10 @@ import { Container } from 'react-bootstrap';
 import FormError from '../components/common/FormError';
 
 const url = BASE_URL + "/services";
-
+/**
+ * This function will print the welcome section, call the ResultHome with the data map as props, and call the review function with the props providers.
+ * @returns <Home> 
+ */
 function Home() {
     const { data, isLoading, isError } = useApi(url); if (isLoading) { return <div></div>; } if (isError) {
         return <FormError>{isError}</FormError>;

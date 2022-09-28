@@ -41,6 +41,10 @@
         background: none;
         margin-top: 3%;
     }
+
+    svg {
+        color: getColor(secondary-color);
+    }
 }
 
 .dropdown-menu .show {
@@ -48,10 +52,9 @@
 }
 
 .dropdown-menu {
-    background-color: getColor(background-orange) !important;
+    background-color: getColor(transparency-primary-color) !important;
     border: none;
 }
-
 
 .dropdown-toggle {
     @extend .nav__menu--item
@@ -59,7 +62,8 @@
 
 .nav__menu--drop-item {
     @extend .nav__menu--item;
-    text-align: right;
+    text-align: left !important;
+    margin-left: 10% !important;
 }
 
 .nav__menu--item {
@@ -93,10 +97,6 @@
 
     @media (min-width:992px) {
         margin-right: 0;
-
-        //img {
-        //    margin-left: 5rem;
-        //}
     }
 }
 
@@ -120,6 +120,10 @@
 
     @media(min-width: 768px) {
         margin: 0;
+    }
+
+    svg {
+        color: getColor(secondary-color);
     }
 }
 

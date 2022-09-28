@@ -17,7 +17,9 @@ import FormError from "../common/FormError";
 import FormSent from '../common/FormSent';
 
 const url = BASE_URL + "/enquiry-forms";
-
+/**
+ * YUP will verify the data requirements and show an error message if something is wrong 
+ */
 const schema = yup.object().shape({
     name: yup.string().required("Please enter your name"),
     email: yup.string().required("Please enter your email"),
@@ -29,7 +31,10 @@ const schema = yup.object().shape({
     otherEvent: yup.boolean(),
     message: yup.string().required("Please enter your message")
 });
-
+/**
+ * This function will provide the form and the post to the API
+ * @returns <Form>
+ */
 function EnquiryForm() {
 
     const [submitting, setSubmitting] = useState(false);
@@ -45,9 +50,14 @@ function EnquiryForm() {
         setSubmitting(true);
         setSubmitError(null);
         try {
+            /**
+         * The const response will send the data to the API/ url provider - BASE_URL + "/enquiry-forms"
+         */
             const response = await axios.post(url, data);
             setFormSentMessage(true);
-            // reset form
+            /**
+             * Reset form after sent it to the API
+             */
             reset({
                 name: "",
                 email: "",

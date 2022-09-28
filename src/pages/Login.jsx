@@ -14,12 +14,17 @@ import FormError from '../components/common/FormError';
 
 
 const url = BASE_URL + TOKEN_PATH;
-
+/**
+ * YUP will verify the data requirements and show an error message if something is wrong 
+ */
 const schema = yup.object().shape({
     identifier: yup.string().required("Please enter your username"),
     password: yup.string().required("Please enter your password"),
 });
-
+/**
+ * This function has a form to the user login in the admin side.
+ * @returns <Login><Form>
+ */
 function Login() {
     const [submitting, setSubmitting] = useState(false);
     const [loginError, setLoginError] = useState(null);
@@ -29,7 +34,7 @@ function Login() {
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
     });
-
+    //This useContext provider the token for authenticated users
     const [auth, setAuth] = useContext(AuthContext);
 
     async function onSubmit(data) {
@@ -37,6 +42,7 @@ function Login() {
         setLoginError(null);
 
         try {
+            //If the user provides the correct username and password "auth" is updated, and the authenticated user goes to the admin page.  
             const response = await axios.post(url, data);
             setAuth(response.data);
             history("/admin");

@@ -7,7 +7,7 @@ import licenseThirdParty from '@iconify/icons-carbon/license-third-party';
 import circlePlus from '@iconify/icons-akar-icons/circle-plus';
 
 /**
- * 
+ * This function is the navbar/menu to the admin side, only for Authenticated users
  * @param {string} props - give a special className to the admin navbar 
  * @returns - HTML menu in the admin side, after the user login
  */

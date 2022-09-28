@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import { Button, Card, Row, Col } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import Paragraph from './Paragraph';
-
+/**
+ * 
+ * @param - use propTypes to check the type of parameter
+ * @returns <Row><Col><Row> - Grid with the API(endpoint "/services") content
+ */
 function ResultHome({ id, title, description, image, alt }) {
     return (
         <>

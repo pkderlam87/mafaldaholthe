@@ -16,16 +16,21 @@ import { BASE_URL } from '../../constants/api';
 import FormError from "../common/FormError";
 
 const urlServices = BASE_URL + "/services";
-
+/**
+ * This function will provider the navbar
+ * @returns <navbar>
+ */
 function NavBar() {
-
+    //history constant use useNavigate() function from react-router-dom
     const history = useNavigate();
+    //This useContext provider the token for authenticated users
     const [auth, setAuth] = useContext(AuthContext);
 
     function logout() {
         setAuth(null);
         history("/");
     }
+    //This constant use the reusable useApi to fetch the data from BASE_URL + "/services"
     const { data, isLoading, isError } = useApi(urlServices); if (isLoading) { return <div className="loading"></div>; } if (isError) {
         return <FormError>{isError}</FormError>;
     }

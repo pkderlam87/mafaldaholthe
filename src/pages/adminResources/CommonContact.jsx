@@ -8,7 +8,10 @@ import Heading from '../../components/layout/Heading';
 import AuthContext from "../../components/context/AuthContext";
 import FormError from "../../components/common/FormError";
 
-
+/**
+ * This function will print the get request to the endpoint "/common-contact-forms". Both the Authenticated and common user can access this feature.
+ * @returns <table> with the data from the common contact form, in the Home page
+ */
 function AdminCommonContact() {
     const [auth] = useContext(AuthContext);
     const [contacts, setContacts] = useState([]);

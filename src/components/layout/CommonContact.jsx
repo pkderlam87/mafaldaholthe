@@ -8,11 +8,13 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import FormError from "../common/FormError";
 import FormSent from '../common/FormSent';
-//import SendEmail from '../common/SendEmail';
 
 
 
 const url = BASE_URL + "/common-contact-forms";
+/**
+ * YUP will verify the data requirements and show an error message if something is wrong 
+ */
 
 const schema = yup.object().shape({
     name: yup.string().required("Please enter your name"),
@@ -20,10 +22,12 @@ const schema = yup.object().shape({
     phone: yup.string(),
     message: yup.string().required("Please enter your message"),
 });
-
+/**
+ * This function will provide the form and the post to the API
+ * @returns <Form>
+ */
 function CommonContact() {
     const [submitting, setSubmitting] = useState(false);
-    //const [contact, setContact] = useState(null);
     const [submitError, setSubmitError] = useState(null);
     const [formSentMessage, setFormSentMessage] = useState(false);
 
@@ -35,16 +39,20 @@ function CommonContact() {
         setSubmitting(true);
         setSubmitError(null);
         try {
+            /**
+             * The const response will send the data to the API/ url provider - BASE_URL + "/common-contact-forms"
+             */
             const response = await axios.post(url, data);
             setFormSentMessage(true);
-            // reset form
+            /**
+             * Reset form after sent it to the API
+             */
             reset({
                 name: "",
                 email: "",
                 phone: "",
                 message: ""
             });
-            //SendEmail(response);
         } catch (error) {
             console.log("error", error);
             setSubmitError(error.toString());

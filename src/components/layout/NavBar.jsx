@@ -4,7 +4,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { Navbar, Container, Nav, NavDropdown, Row, Col } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AuthContext from "../context/AuthContext";
-import logoBlack from "../../MH-Styling-TransBackground-BrownLeaves.png";
+import logoBlack from "../../Logo-MH-Balloon-Black-Text.png";
 import { Icon } from '@iconify/react';
 import userAdmin from '@iconify/icons-carbon/user-admin';
 import homeHeart from '@iconify/icons-bx/home-heart';

@@ -1,5 +1,5 @@
 import React from 'react';
-import logoBeige from "../../Logo-MH-Balloon-Beige-Text.png";
+import logoBeige from "../../MH-STYLING-DRAFT - ToDarkBackground.png";
 import { Icon } from '@iconify/react';
 import instagramIcon from '@iconify/icons-uil/instagram';
 import facebookSquare from '@iconify/icons-la/facebook-square';

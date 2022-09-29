@@ -7,4 +7,18 @@
         margin: $margin-title;
         text-transform: uppercase;
     }
+
+    .carousel-inner {
+
+        .carousel-item {
+            img {
+                @media(min-width:768px) {
+                    max-width: 50%;
+                    margin: 0 auto;
+
+                }
+            }
+        }
+    }
+
 }

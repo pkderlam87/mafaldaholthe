@@ -1,0 +1,27 @@
+.home__services {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+    .baby {
+        order: -1;
+    }
+
+    @media (min-width: 768px) {
+        .reveal .card .col:nth-child(1) {
+            order: 7;
+
+            img {
+                margin: 6% 0 0 0;
+            }
+        }
+
+        .birthday .card .col:nth-child(1) {
+            order: 7;
+
+            img {
+                margin: 6% 0 0 0;
+            }
+        }
+    }
+}

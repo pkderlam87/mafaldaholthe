@@ -11,9 +11,9 @@ import Paragraph from './Paragraph';
 function ResultHome({ id, title, description, image, alt }) {
     return (
         <>
-            <Row>
+            <Row className={title}>
                 <Link to={`detail/${id}`} className="specific-product___link">
-                    <Card className={title}>
+                    <Card>
                         <Col>
                             <div className="card__image--background">
                                 <img src={image} alt={alt} />

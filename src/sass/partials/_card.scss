@@ -1,89 +1,67 @@
-.home__services {
-    display: grid;
-    margin: 0 auto;
+.specific-product___link {
+    text-decoration: none;
+    color: getColor(secondary-color);
 
-    .specific-product___link {
-        text-decoration: none;
+    &:hover {
         color: getColor(secondary-color);
+    }
 
-        &:hover {
-            color: getColor(secondary-color);
+    .card__image--background {
+        background-color: getColor(background-orange);
+        display: flex;
+    }
+
+    .card {
+        justify-content: center;
+        align-items: center;
+        border: none;
+        background-color: getColor(card-background);
+        border-radius: 15px;
+        max-width: 95%;
+        margin: 0 auto 3% auto;
+
+        h3 {
+            text-transform: uppercase;
+            margin: $margin-title;
+            text-align: center;
         }
 
-        .card__image--background {
-            background-color: getColor(background-orange);
-            display: flex;
+        img {
+            max-width: 90%;
+            margin: 2% auto 6% auto;
+            border: 2px solid getColor(third-color);
+            object-fit: contain;
+            box-shadow: 0 6px 12px getColor(shadow-color);
         }
 
-        .card {
-            justify-content: center;
-            align-items: center;
-            border: none;
-            background-color: getColor(card-background);
-            border-radius: 15px;
-            max-width: 95%;
-            margin: 0 auto 3% auto;
-
-            h3 {
-                text-transform: uppercase;
-                margin: $margin-title;
-                text-align: center;
-            }
-
-            img {
-                max-width: 90%;
-                margin: 2% auto 6% auto;
-                border: 2px solid getColor(third-color);
-                object-fit: contain;
-                box-shadow: 0 6px 12px getColor(shadow-color);
-            }
-
-            .card__text {
-                max-width: 320px;
-                margin: 2%;
-            }
-
-            @media (min-width: 768px) {
-                flex-direction: row;
-                margin: 0 auto;
-                align-items: normal;
-
-
-                &.birthday .col:nth-child(1) {
-                    order: 7;
-
-                    img {
-                        margin: 6% 0 0 0;
-                    }
-                }
-
-                &.weddings .col:nth-child(1) {
-                    order: 7;
-
-                    img {
-                        margin: 6% 0 0 0;
-                    }
-                }
-
-                img {
-                    margin: 6% 0 0 auto;
-                    max-width: 85%;
-                }
-
-                .card__text {
-                    display: flex;
-                    flex-direction: column;
-                    margin: 2%;
-                    max-width: 90%;
-                }
-
-            }
+        .card__text {
+            max-width: 320px;
+            margin: 2%;
         }
 
         @media (min-width: 768px) {
-            & {
-                display: flex;
+            flex-direction: row;
+            margin: 0 auto;
+            align-items: normal;
+
+            img {
+                margin: 6% 0 0 auto;
+                max-width: 85%;
             }
+
+            .card__text {
+                display: flex;
+                flex-direction: column;
+                margin: 2%;
+                max-width: 90%;
+            }
+
+        }
+    }
+
+    @media (min-width: 768px) {
+        & {
+            display: flex;
         }
     }
 }

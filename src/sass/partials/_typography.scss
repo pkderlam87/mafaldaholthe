@@ -8,29 +8,29 @@ h6,
 .btn,
 .nav__menu--item,
 .admin__navbar--link {
-    font-family: $font-primary;
+    font-family: $font-primary  !important;
 }
 
 p,
 a {
-    font-family: $font-secondary;
+    font-family: $font-secondary  !important;
 }
 
 a {
-    color: getColor(light-blue);
+    color: getColor(light-blue) !important;
 
     &:hover {
-        color: getColor(dark-blue);
+        color: getColor(dark-blue) !important;
     }
 }
 
 .welcome__title {
-    font-family: $font-tertiary;
+    font-family: $font-tertiary  !important;
 }
 
 
 body {
     @media(min-width: 768px) {
-        font-size: 1.2rem;
+        font-size: 1.2rem !important;
     }
 }

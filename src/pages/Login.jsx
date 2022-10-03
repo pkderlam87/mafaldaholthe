@@ -56,9 +56,11 @@ function Login() {
 
     return (<>
         <WelcomeOtherPages />
+
         <div className="login">
+
             <Heading content="Log in"></Heading>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)} className="login__form">
                 {loginError && <FormError>{loginError}</FormError>}
                 <FloatingLabel
                     controlId="floatingInput"

@@ -19,6 +19,14 @@ form {
     max-width: 90%;
 }
 
+.login__form {
+    max-width: 100%;
+
+    @media (min-width:768px) {
+        margin: 2% 20% 20% 20%;
+    }
+}
+
 .home__contact-form {
     background-color: getColor(card-background);
 

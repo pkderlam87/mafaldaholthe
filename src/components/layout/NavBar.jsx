@@ -47,7 +47,7 @@ function NavBar() {
                         </Col>
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
-                                <NavLink to="/" className="nav__menu--item"><Icon icon={homeHeart} /> Home</NavLink>
+                                <NavLink to="/" end className="nav__menu--item" exact={true}><Icon icon={homeHeart} /> Home</NavLink>
                                 <NavDropdown className="nav__menu--drop" title="Parties" id="basic-nav-dropdown">
                                     {data.map((service) => {
                                         const { id, title } = service;

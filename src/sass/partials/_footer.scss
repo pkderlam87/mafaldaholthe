@@ -27,6 +27,8 @@
 
 .footer__email--block {
     display: flex;
+    gap: 0.5%;
+
 
     .footer__email {
         color: getColor(light-beige);

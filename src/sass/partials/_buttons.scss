@@ -1,27 +1,30 @@
+.btn,
 .btn-primary {
-    background-color: getColor(primary-color);
-    color: getColor(secondary-color);
-    box-shadow: 0 6px 12px getColor(shadow-color);
-    border: none;
+    display: flex !important;
+    flex-direction: column !important;
+    background-color: getColor(primary-color) !important;
+    color: getColor(secondary-color) !important;
+    box-shadow: 0 6px 12px getColor(shadow-color) !important;
+    border: none !important;
 
 
     &:hover {
-        border: 2px solid getColor(primary-color);
-        background-color: getColor(third-color);
-        color: getColor(secondary-color);
+        border: 2px solid getColor(primary-color) !important;
+        background-color: getColor(third-color) !important;
+        color: getColor(secondary-color) !important;
     }
 
     &:focus {
-        border: none;
-        background-color: getColor(focus-color);
-        color: getColor(secondary-color);
-        box-shadow: inset 2px 3px 10px getColor(inner-shadow);
+        border: none !important;
+        background-color: getColor(focus-color) !important;
+        color: getColor(secondary-color) !important;
+        box-shadow: inset 2px 3px 10px getColor(inner-shadow) !important;
     }
 }
 
 .btn-primary:disabled {
     @extend .btn-primary;
-    opacity: 1;
+    opacity: 1 !important;
 
 }
 
@@ -32,15 +35,15 @@ button:focus:not(:focus-visible) {
 .btn-secondary {
     @extend .btn-primary;
     display: flex;
-    justify-content: center;
-    width: 70%;
-    margin: 3% auto 10% auto;
-    padding: 2%;
-    text-decoration: none;
+    justify-content: center !important;
+    width: 70% !important;
+    margin: 3% auto 10% auto !important;
+    padding: 2% !important;
+    text-decoration: none !important;
 
     @media (min-width: 768px) {
-        width: 50%;
-        padding: 2%;
+        width: 50% !important;
+        padding: 2% !important;
     }
 }
 

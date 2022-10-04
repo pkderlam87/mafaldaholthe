@@ -54,9 +54,7 @@ function SearchBar() {
                 </Form>
                 {suggestions && suggestions.map((suggestion, i) => {
                     return (
-                        <div key={i} className="suggestion" onClick={() => onSuggestHandler(suggestion.title)}>
-                            <Link to={`detail/${suggestion.id}`}> {suggestion.title} </Link>
-                        </div>
+                        <Link key={i} to={`detail/${suggestion.id}`} className="suggestion" onClick={() => onSuggestHandler(suggestion.title)}> {suggestion.title} </Link>
                     );
                 })}
             </Container>

@@ -1,36 +1,40 @@
 # Project Exam 2 - Mafalda Holthe website
 
-![image]()
+![image](https://github.com/pkderlam87/mafaldaholthe/blob/main/src/images/screen.jpg)
 
-A simple overview of the use/purpose of the project.
+This project is a website to promote the work of Mafalda Holthe. She started as an entrepreneur a few months ago and wanted a page for her clients to contact her and apply their decorations.
 
 ## Description
 
-Add a more detailed description of what your project entails and set out to do.
+This site has an API as a content manager. So, with API calls it is possible:
 
-You can add some bullet points if you'd like to:
+- to search on the site;
+- show the services;
+- check a specific service;
+- send messages to Mafalda;
+- authenticate an user;
+- access the list of enquiries and contact;
+- add a new service.
 
-- List item 1
-- List item 2
-- List item 3
 
 ## Built With
 
-You can list a the tech stack that you've used over here
+For this project I used these tech stack: 
 
 - [React.js](https://reactjs.org/)
-- [Bootstrap](https://getbootstrap.com)
+- [React Bootstrap](https://react-bootstrap.netlify.app/)
+- [npmjs] (https://www.npmjs.com/)
+- [Saas] (https://sass-lang.com/)
+- [Strapi] (https://strapi.io/)
 
 ## Getting Started
 
 ### Installing
 
-This is where you list how to get the project started. It typically just includes telling a person to clone the repo and then to install the dependencies e.g.
-
 1. Clone the repo:
 
 ```bash
-git clone git@github.com:NoroffFEU/portfolio-1-example.git
+git clone git@github.com:pkderlam87/mafaldaholthe
 ```
 
 2. Install the dependencies:
@@ -41,9 +45,8 @@ npm install
 
 ### Running
 
-Here is where you detail how to run the app. It typically involves the commands you'd need to run to start the project e.g.
 
-To run the app, run the following commands:
+To run the app, run the following commands in terminal:
 
 ```bash
 npm run start
@@ -51,20 +54,23 @@ npm run start
 
 ## Contributing
 
-Here you can detail any information you want to provide regarding contributing to the project. For big projects you will usually have a separate `CONTRIBUTING.md` and link to it, but for smaller projects you can simply include instructions here. These instructions can simply detail the process you want a person to take, such as to make sure to open a pull request so code can be reviewed.
+If you want to contribute to this project, you can do it, but read these instructions first:
+
+- create another branch;
+- add a readme file with instructions;
+- comment your code;
+- send me an email with the link to your branch: <a href="mailto:pkderlam@hotmail.com">pkderlam@hotmail.com</a>
+
 
 ## Contact
 
-This is where you can leave your social links for people to contact you, such as a LinkedIn profile or Twitter link e.g.
+You can contact me by:
 
-[My Twitter page](www.twitter.com)
+[My Instagram page](https://www.instagram.com/prisciladerlam/)
 
-[My LinkedIn page](www.linkedin.com)
+[My LinkedIn page](https://www.linkedin.com/in/priscila-kuhn-derlam/)
 
-## License
-
-You can link to your license file here if you're using one, or mention what license the codebase falls under. If you're unsure then you can simply delete this section.
 
 ## Acknowledgments
 
-This is where you can add any acknowledgements if you'd like, such as to people who have helped you or any code snippets you'd like to mention. You can delete this section if you don't have any acknowledgements to make.
+I would like to thank to Monika Lie (https://github.com/LunaDragon666), Tiffany Utvær (https://github.com/utvaer) and my professors at Noroff.

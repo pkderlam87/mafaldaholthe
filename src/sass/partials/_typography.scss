@@ -9,6 +9,7 @@ h6,
 .nav__menu--item,
 .admin__navbar--link {
     font-family: $font-primary  !important;
+    color: getColor(secondary-color) !important;
 }
 
 p,

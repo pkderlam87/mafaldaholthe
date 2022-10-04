@@ -31,10 +31,10 @@
 
 
     .footer__email {
-        color: getColor(light-beige);
+        color: getColor(light-beige) !important;
 
         &:hover {
-            color: getColor(third-color);
+            color: getColor(third-color) !important;
         }
     }
 }

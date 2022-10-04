@@ -13,7 +13,6 @@ import AddService from "./pages/adminResources/AddService";
 import CommonContact from "./pages/adminResources/CommonContact";
 import EnquiryContact from "./pages/adminResources/EnquiryContact"
 import NavBar from "./components/layout/NavBar";
-import SearchBar from "./components/layout/SearchBar";
 import { AuthProvider } from "./components/context/AuthContext";
 import Footer from "./components/layout/Footer";
 import './sass/styles.scss';
@@ -24,7 +23,6 @@ function App() {
       <AuthProvider>
         <BrowserRouter>
           <NavBar />
-          <SearchBar />
           <Routes>
             <Route path="/" element={<Home />} exact></Route>
             <Route path="/detail/:id" element={<Detail />} />

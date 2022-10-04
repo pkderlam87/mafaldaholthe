@@ -23,9 +23,9 @@ For this project I used these tech stack:
 
 - [React.js](https://reactjs.org/)
 - [React Bootstrap](https://react-bootstrap.netlify.app/)
-- [npmjs] (https://www.npmjs.com/)
-- [Saas] (https://sass-lang.com/)
-- [Strapi] (https://strapi.io/)
+- [npmjs](https://www.npmjs.com/)
+- [Saas](https://sass-lang.com/)
+- [Strapi](https://strapi.io/)
 
 ## Getting Started
 

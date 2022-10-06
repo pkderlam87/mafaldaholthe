@@ -73,4 +73,4 @@ You can contact me by:
 
 ## Acknowledgments
 
-I would like to thank to Monika Lie (https://github.com/LunaDragon666), Tiffany Utvær (https://github.com/utvaer) and my professors at Noroff.
+I would like to thank to [Monika Lie](https://github.com/LunaDragon666), [Tiffany Utvær](https://github.com/utvaer) and my professors at Noroff.

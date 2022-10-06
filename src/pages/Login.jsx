@@ -68,12 +68,12 @@ function Login() {
                     className="mb-3"
                 >
                     <Form.Control type="username" name="username" placeholder="Username" {...register("identifier")} />
-                    {errors.identifier && <span>{errors.identifier.message}</span>}
+                    {errors.identifier && <FormError>{errors.identifier.message}</FormError>}
                 </FloatingLabel>
 
                 <FloatingLabel controlId="floatingPassword" label="Password">
                     <Form.Control type="password" name="password" placeholder="Password" {...register("password")} />
-                    {errors.password && <span>{errors.password.message}</span>}
+                    {errors.password && <FormError>{errors.password.message}</FormError>}
                 </FloatingLabel>
                 <button className='btn btn-secondary'>{submitting ? "Login in..." : "Login"}</button>
             </form>

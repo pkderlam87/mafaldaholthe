@@ -3,6 +3,7 @@ import { Icon } from '@iconify/react';
 import doubleQuotesL from '@iconify/icons-ci/double-quotes-l';
 import doubleQuotesR from '@iconify/icons-ci/double-quotes-r';
 import Heading from './Heading';
+import { Container } from 'react-bootstrap';
 /**
  * 
  * @param {string} props - title - call Heading function to insert the title
@@ -17,10 +18,12 @@ function Review(props) {
         <>
             <div className="review">
                 <Heading content={props.title}></Heading>
-                <h6 className='quotes'><Icon icon={doubleQuotesL} /> {props.content} <Icon icon={doubleQuotesR} /></h6>
-                <div className="review__author">
-                    <a href={props.link}><h6 className='author'>{props.author}</h6></a>
-                </div>
+                <Container>
+                    <h5 className='quotes'><Icon icon={doubleQuotesL} /> {props.content} <Icon icon={doubleQuotesR} /></h5>
+                    <div className="review__author">
+                        <h5><a href={props.link} className='author'>{props.author}</a></h5>
+                    </div>
+                </Container>
             </div>
         </>
     )

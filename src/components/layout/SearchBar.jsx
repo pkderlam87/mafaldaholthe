@@ -4,7 +4,7 @@ import { BASE_URL } from '../../constants/api';
 import { Icon } from '@iconify/react';
 import searchIcon from '@iconify/icons-wpf/search';
 import { Link } from "react-router-dom";
-import { Container, Form } from 'react-bootstrap';
+import { Container, Form, Row } from 'react-bootstrap';
 
 const url = BASE_URL + "/services";
 /**
@@ -45,18 +45,24 @@ function SearchBar() {
     return (
         <>
             <Container className="search__wrapper">
-                <Form className="d-flex search">
-                    <Form.Control
-                        type="search" onChange={e => onChangeHandler(e.target.value.trim().toLowerCase())} value={text} placeholder="Search for 'birthday','wedding'" className="me-1" aria-label="Search" />
-                    <button className="btn btn-primary" disabled>
-                        <Icon icon={searchIcon} />
-                    </button>
-                </Form>
-                {suggestions && suggestions.map((suggestion, i) => {
-                    return (
-                        <Link key={i} to={`detail/${suggestion.id}`} className="suggestion" onClick={() => onSuggestHandler(suggestion.title)}> {suggestion.title} </Link>
-                    );
-                })}
+                <Row>
+                    <Form className="d-flex search">
+                        <Form.Control
+                            type="search" onChange={e => onChangeHandler(e.target.value.trim().toLowerCase())} value={text} placeholder="Search for 'birthday','wedding'" className="me-1" aria-label="Search" />
+                        <button className="btn btn-primary" disabled>
+                            <Icon icon={searchIcon} />
+                        </button>
+                    </Form>
+                </Row>
+                <Row >
+                    {suggestions && suggestions.map((suggestion, i) => {
+                        return (
+
+                            <Link key={i} to={`detail/${suggestion.id}`} className="suggestion" onClick={() => onSuggestHandler(suggestion.title)}> {suggestion.title} </Link>
+
+                        );
+                    })}
+                </Row>
             </Container>
         </>
     )

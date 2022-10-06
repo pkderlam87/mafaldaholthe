@@ -1,21 +1,14 @@
 .review {
     background-color: getColor(background-orange);
 
+    h5 {
+        font-style: italic;
+    }
+
     .heading {
         text-transform: uppercase;
         text-align: center;
         margin: 5% auto;
-    }
-
-    h6 {
-        font-style: italic;
-        margin: 4%;
-
-        @media(min-width:768px) {
-            margin: 2%;
-            max-width: 880px;
-        }
-
     }
 
     .author {

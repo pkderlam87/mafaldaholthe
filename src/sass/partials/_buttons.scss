@@ -6,7 +6,10 @@
     color: getColor(secondary-color) !important;
     box-shadow: 0 6px 12px getColor(shadow-color) !important;
     border: none !important;
-
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-transform: uppercase;
 
     &:hover {
         border: 2px solid getColor(primary-color) !important;
@@ -44,6 +47,7 @@ button:focus:not(:focus-visible) {
     @media (min-width: 768px) {
         width: 50% !important;
         padding: 2% !important;
+        font-size: 1.2em;
     }
 }
 

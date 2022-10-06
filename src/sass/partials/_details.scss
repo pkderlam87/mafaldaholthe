@@ -8,6 +8,29 @@
         text-transform: uppercase;
     }
 
+    .detail__image--description {
+        display: none;
+
+        @media (min-width:768px) {
+            display: block;
+            background-color: getColor(background-orange);
+            max-width: 60%;
+            margin-left: 20%;
+
+            img {
+                max-width: 60%;
+                margin: 6% auto -7% -6%;
+                border: 2px solid getColor(third-color);
+                object-fit: contain;
+                box-shadow: 0 6px 12px getColor(shadow-color);
+            }
+        }
+    }
+
+    .carousel-fade {
+        margin-top: 5%;
+    }
+
     .carousel-inner {
 
         .carousel-item {

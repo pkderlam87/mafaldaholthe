@@ -32,3 +32,11 @@
     }
 
 }
+
+.carousel-indicators [data-bs-target] {
+    border-radius: 50% !important;
+    width: 15px !important;
+    height: 15px !important;
+    border: 2px solid getColor(dark-brown) !important;
+    background-color: getColor(dark-brown) !important;
+}

@@ -4,7 +4,7 @@ import { HashLink } from 'react-router-hash-link';
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import { Button, Container } from 'react-bootstrap';
+import { Button, Container, Row, Col } from 'react-bootstrap';
 import { BASE_URL } from '../constants/api'
 import Heading from '../components/layout/Heading';
 import Paragraph from '../components/layout/Paragraph';
@@ -68,8 +68,15 @@ function Detail() {
             <Container key={service.id} className="detail__service">
                 <div>
                     <Heading content={service.title}></Heading>
-                    <Paragraph content={service.description}></Paragraph>
-                    <HashLink smooth to={`/detail/${id}#enquiryForm`} className="detail__button--enquiry"><Button className="btn-secondary">CONTACT US</Button></HashLink>
+                    <Row>
+                        <Col>
+                            <Paragraph content={service.description}></Paragraph>
+                            <HashLink smooth to={`/detail/${id}#enquiryForm`} className="detail__button--enquiry"><Button className="btn-secondary">CONTACT US</Button></HashLink>
+                        </Col>
+                        <Col className="detail__image--description">
+                            <img src={images[0].url} alt={images[0].alternativeText} />
+                        </Col>
+                    </Row>
                     <Carousel fade>
                         {
                             images.map((image, i) => {

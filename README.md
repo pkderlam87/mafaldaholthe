@@ -34,7 +34,12 @@ For this project I used these tech stack:
 1. Clone the repo:
 
 ```bash
-git clone git@github.com:pkderlam87/mafaldaholthe
+git clone https://github.com/pkderlam87/mafaldaholthe.git
+```
+1.1. Open the directory
+
+```bash
+cd mafaldaholthe
 ```
 
 2. Install the dependencies:

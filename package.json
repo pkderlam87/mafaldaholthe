@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@brainhubeu/react-carousel": "^2.0.4",
     "@emailjs/browser": "^3.7.0",
     "@hookform/resolvers": "^2.9.7",
     "@iconify/icons-akar-icons": "^1.2.9",
